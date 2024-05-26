@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu';
+    overflow: hidden;
+}
+.wh18{
+  width: 18px;
+  height: 18px;
+}
+.desktop-container{
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+     .wallpaper{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background-size: cover;
+        z-index: -2;
+     }
+     .taksbar{
+        height: 100%;
+        width: 50px;
+        background: #211018c6;
+        padding-top: 25px;
+        >div{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+        }
+        .taskbaricon{
+            margin-bottom: 15px;
+        }
+        .taskbaricon,.startbtn{
+            img{
+              width: 40px;
+              height: 40px;
+            }
+        }
+     }
+
+     .topbar{
+        color: white;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        height: 20px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        background-color:#131313;
+      .displaytime{
+        font-size: 12px;
+      } 
+      .shortcut{
+        margin-right: 4px;
+        img{
+           margin-right: 6px;
+           width: 12px;
+           height: 12px;
+        }
+      }
+    }
+
+}
+
+
+.app-drawer{
+  // position: absolute;
+  // top: 20px;
+  // left: 50px;
+  margin-top: 20px;
+flex-grow: 1;
+
+  background: rgba(0, 0, 0, 0.649);
+  .searchbox{
+    margin-top: 20px;
+    width: 250px;
+    height: 32px;
+    border-radius: 30px;
+    background: white;
+    color: #2f2f2f;
+    font-weight: 500;
+  }
+  .all-app-list{
+    margin: 0 auto;
+    margin-top: 100px;
+    grid-row-gap: 35px;
+    width: 80%;
+    height:450px;
+
+  }
+  .app-container{
+    color: #dfdfdf;
+    width: 100px;
+    height: 120px;
+    .app-icon{
+      width: 45px;
+      height: 45px;
+    }
+    .app-name{
+      margin-top: 2px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-wrap: nowrap;
+      width: 80px;
+    }
+    &:hover{
+      .app-name{
+        text-wrap:wrap
+      }
+      background: #93939346;
+      backdrop-filter: 50px;
+      border-radius: 8px;
+    }
+  }
+
+}
+
+
+.ethernet-menu{
+  .top-setting-container{
+    width: 280px;
+    bottom: -308px;
+    height: 300px;
+    left: -280px;
+    z-index: 1 ;
+    background: #e4e4e4;
+    border-radius: 8px;
+  }
+}
+
+
+
+// top-setting-container -start 
+
+.top-setting-container{
+  color: #232323;
+  input[type=range] {
+    -webkit-appearance: none;
+ }
+ input[type=range]::-webkit-slider-runnable-track {
+    width: 80%;
+    height: 3px;
+    background: #92908f;
+    border: none;
+    border-radius: 3px;
+ }
+ input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background: rgb(254, 254, 254);
+    margin-top: -4px;
+    border: 1px solid rgba(0, 0, 0, 0.605);
+ }
+ input[type=range]:focus {
+    outline: none;
+ }
+//   input[type=range]:focus::-webkit-slider-runnable-track {
+//     background: #ccc;
+//  }
+ input[type=range] {
+    /* fix for FF unable to apply focus style bug  */
+    // border: 1px solid white;
+    /*required for proper track sizing in FF*/
+    background: transparent;
+    width: 80%;
+ }
+  input[type=range]::-moz-range-track {
+    width: 80%;
+    height: 5px;
+    background: #ddd;
+    border: none;
+    border-radius: 3px;
+ }
+  input[type=range]::-moz-range-thumb {
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: goldenrod;
+ }
+ 
+ /*hide the outline behind the border*/
+ input[type=range]:-moz-focusring {
+    outline: 1px solid white;
+    outline-offset: -1px;
+ }
+  input[type=range]:focus::-moz-range-track {
+    background: #ccc;
+ }
+ 
+ /* for ie */
+ 
+ input[type=range]::-ms-track {
+    width: 80%;
+    height: 5px;
+ 
+ /*remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
+    background: transparent;
+ 
+ /*leave room for the larger thumb to overflow with a transparent border */
+    border-color: transparent;
+    border-width: 6px 0;
+ 
+ /*remove default tick marks*/
+    color: transparent;
+ }
+ input[type=range]::-ms-fill-lower {
+    background: #777;
+    border-radius: 10px;
+ }
+ input[type=range]::-ms-fill-upper {
+    background: #ddd;
+    border-radius: 10px;
+ }
+ input[type=range]::-ms-thumb {
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: goldenrod;
+ }
+ input[type=range]:focus::-ms-fill-lower {
+    background: #888;
+ }
+ input[type=range]:focus::-ms-fill-upper {
+    background: #ccc;
+ }
+ .valume-input{
+  // width: 100%;
+  height: 48px;
+  border-bottom: 1px solid #92908f9a;
+
+
+}
+.settingoption{
+  font-size: 12px;
+  width: 100%;
+  height: 30px;
+
+  >div{
+    width: 95%;
+    height: 100%;
+    border-radius: 5px;
+    padding-left: 10px;
+    &:hover{
+      background: #92908f9a;
+    }
+  }
+
+}
+}
+

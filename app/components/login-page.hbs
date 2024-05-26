@@ -1,0 +1,21 @@
+<div class="login-container " style={{concat "background:" this.desktopService.wallpaper}}>
+    <div class="time">
+     {{this.loginTime}}
+    </div>
+    <div class="date">{{this.loginDate}}</div>
+
+    <div class="login-avatar">
+
+    </div>
+    <div class="login-password">
+        {{input value = this.loginPassword type='password'}}
+    </div>
+    <div class="loginbtn">
+        <button type="button" {{on "click" this.goToDesktopPage}}>Login</button>
+    </div>
+    <div class="operationbtns">
+
+    </div>
+
+</div>
+{{yield}}

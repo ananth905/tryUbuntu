@@ -1,0 +1,23 @@
+<div class="app-drawer flex  items-center flex-col">
+    <div class="searchbox  flex items-center pl-3">
+        <img src="/icons/searchicon.png" alt="" class="wh18 mr-1">
+        <span class="text-xs">Type to search</span>
+    </div>
+
+    <div class="all-app-list grid justify-center items-center grid-cols-8 grid-rows-3">
+        {{#each this.allList as |app index|}}
+        <div class="app-container flex items-center flex-col justify-center">
+            <img class="app-icon" src={{app.src}}/>
+            <div class="app-name whitespace-nowrap text-center">{{app.name}}</div>
+        </div>
+        
+        {{/each}}
+    </div>
+
+
+
+
+
+
+</div>
+{{yield}}

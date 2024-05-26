@@ -1,0 +1,44 @@
+<div class="desktop-container flex" >
+    <div class="wallpaper" >
+
+    </div>
+    <div class="taksbar">
+        <div>
+          <div class="applist">
+            {{#each this.iconList as |icon index| }}
+              <div class="taskbaricon">
+               <img src={{icon.link}} alt="">  
+              </div>
+            {{/each}}
+
+          </div>
+          <div class="startbtn" {{action this.setCurrentApp 'app-drawer' true}}>
+             <img src="/icons/dots-menu.png" alt="" />
+          </div>
+        </div>
+    </div>
+    <div class="topbar">
+      <div class="currentactivity"></div>
+      <div class="timebox">
+        <div class="displaytime">{{this.taskBarTime}}</div>
+      </div>
+      <div class="shortcut flex items-center">
+        <div class="ethernet-menu relative" {{action this.toggleProperty}}>
+          <img src="/icons/ethernet.png" alt="">
+          {{#if this.isTopSettingOpen}}
+            <TopSettingContainer/>
+          {{/if}}
+        </div>
+        <img src="/icons/powerbtn.png" class="powerbtn"/>
+      </div>
+    </div>
+
+   {{#if this.desktopservice.appName}}
+    {{component this.desktopservice.appName}}
+   {{/if }}
+
+
+
+
+</div>
+{{yield}}
