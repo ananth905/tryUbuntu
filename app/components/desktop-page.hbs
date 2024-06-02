@@ -22,8 +22,8 @@
       <div class="timebox">
         <div class="displaytime">{{this.taskBarTime}}</div>
       </div>
-      <div class="shortcut flex items-center">
-        <div class="ethernet-menu relative" {{action this.toggleProperty}}>
+      <div class="shortcut flex items-center"  onclick={{action this.toggleProperty}}>
+        <div class="ethernet-menu relative">
           <img src="/icons/ethernet.png" alt="">
           {{#if this.isTopSettingOpen}}
             <TopSettingContainer/>

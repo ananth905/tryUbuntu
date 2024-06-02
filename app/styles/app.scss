@@ -131,9 +131,9 @@ flex-grow: 1;
 .ethernet-menu{
   .top-setting-container{
     width: 280px;
-    bottom: -308px;
-    height: 300px;
-    left: -280px;
+    bottom: -287px;
+    min-height: 270px;
+    left: -260px;
     z-index: 1 ;
     background: #e4e4e4;
     border-radius: 8px;
@@ -250,11 +250,11 @@ flex-grow: 1;
 .settingoption{
   font-size: 12px;
   width: 100%;
-  height: 30px;
+  min-height: 30px;
 
-  >div{
+  .setting-opt-name,.subcatItem{
     width: 95%;
-    height: 100%;
+    height: 30px;
     border-radius: 5px;
     padding-left: 10px;
     &:hover{

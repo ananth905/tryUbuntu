@@ -6,25 +6,33 @@
        <input type="range" name="" id="" {{action this.setVolume}}>
      </div>
    </div>
-   <div class="flex settingoption items-center justify-center">
-    <div class="flex items-center justify-between">
+   {{#each this.itemBeforeDivder as |item index |}}
+   <div class="flex flex-col settingoption items-center justify-center mt-1" onclick={{action this.toggleSubcatList}}>
+     <div class="flex items-center setting-opt-name justify-between"  >
       <div class="flex items-center ">
-         <img src="/icons/ether.png" alt=""/>
-         <div class="settingoption-name ">Wired Connection</div>
+         <img src={{item.src}} alt=""/>
+         <div class="settingoption-name ">{{item.name}}</div>
       </div>
-      <img class="accordianicon" src="/icons/iconright.png"/>
+      {{#if item.subCat}}
+        <img class="accordianicon" src="/icons/iconright.png"/>
+      {{/if}}
+     </div>
+     <div class="subcatlist h-0 overflow-hidden flex flex-col w-full">
+      {{#if item.subCat.length}}
+       {{#each item.subCat as |subItem index|}}
+         <div class="subcatItem h-[30px] mx-auto leading-[30px]">{{subItem}}</div>
+       {{/each}}
+      {{/if}}
+     </div>
     
-    </div>
+
+
+
    </div>
-   <div class="flex settingoption items-center justify-center">
-    <div class="flex items-center justify-between">
-      <div class="flex items-center ">
-         <img src="/icons/battery.png" alt=""/>
-         <div class="settingoption-name ">Remaining(30 %)</div>
-      </div>
-      <img class="accordianicon" src="/icons/iconright.png"/>
-    
-    </div>
-   </div>
+   {{#if (eq index 2)}}
+    <div class="border-t-2 border-gray-300 m-1 mx-auto w-[90%]"></div>
+   {{/if}}
+   {{/each}}
+   
  </div>
 {{yield}}
