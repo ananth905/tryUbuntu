@@ -8,7 +8,7 @@ export default class DesktopPageComponent extends Component {
   @service
   desktopservice;
 
-  @tracked isTopSettingOpen = true;
+  @tracked isTopSettingOpen = false;
 
   iconList = [
     {

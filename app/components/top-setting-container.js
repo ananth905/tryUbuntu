@@ -41,10 +41,12 @@ export default class TopSettingContainerComponent extends Component {
     event.target.style.background = `linear-gradient(to right, red ${event.target.value}%, #ccc)`;
   }
 
-
   @action
-  toggleSubcatList(event){
+  toggleSubcatList(event) {
     // $(".subcatlist").addClass('h-0 overflow-hidden')
-    event.target.closest('.settingoption').querySelector('.subcatItem').classList.remove('h-0','overflow-hidden')
+    event.target
+      .closest('.settingoption')
+      .querySelector('.subcatItem')
+      .classList.remove('h-0', 'overflow-hidden');
   }
 }

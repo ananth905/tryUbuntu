@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
-
+@import "common";
 body{
     padding: 0;
     margin: 0;
@@ -265,3 +265,32 @@ flex-grow: 1;
 }
 }
 
+
+
+///settings-container-----
+/// 
+.settings-container{
+  font-weight: 600;
+  .settings-header{
+    height: 40px;
+    min-width: 950px;
+   
+    font-size: 12px;
+    background: #e9e9e9;
+    border: 1px solid #ababab95;
+    .lhs-header{
+      width: 195px;
+      border-right:  1px solid #ababab95;
+      padding: 7px;
+    }
+    .setting-header-icon{
+      background: #f8f8f8;
+      border: 1px solid #ababab95;
+      
+      padding: 6.5px;
+      &:hover{
+        background: #ABABAB;
+      }
+    }
+  }
+}
