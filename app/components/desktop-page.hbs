@@ -5,15 +5,15 @@
     <div class="taksbar">
         <div>
           <div class="applist">
-            {{#each this.iconList as |icon index| }}
-              <div class="taskbaricon">
+            {{#each-in this.taskBarIconList as |index icon | }}
+              <div class={{concat "taskbaricon " (if (eq index this.desktopservice.currentOpenedAppId ) " opened-app current-opened-app")}}>
                <img src={{icon.link}} alt="">  
               </div>
-            {{/each}}
+            {{/each-in}}
 
           </div>
-          <div class="startbtn" {{action this.setCurrentApp 'app-drawer' true}}>
-             <img src="/icons/dots-menu.png" alt="" />
+          <div class="startbtn" {{action this.setCurrentApp 'app-drawer' true 1}}>
+             <i class="fa-brands fa-ubuntu text-2xl text-white"></i>
           </div>
         </div>
     </div>
@@ -33,10 +33,10 @@
       </div>
     </div>
 
-   {{!-- {{#if this.desktopservice.appName}} --}}
-    {{!-- {{component this.desktopservice.appName}} --}}
-    <Settings::SettingsContainer/>
-   {{!-- {{/if }} --}}
+   {{#if this.desktopservice.currentApp.appName}}
+    {{component this.desktopservice.currentApp.appName}}
+    {{!-- <Settings::SettingsContainer/> --}}
+   {{/if }}
 
 
 

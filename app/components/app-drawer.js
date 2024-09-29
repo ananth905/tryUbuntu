@@ -1,54 +1,73 @@
 import Component from '@glimmer/component';
-
+import { action ,set } from '@ember/object';
+import { service } from '@ember/service';
 export default class AppDrawerComponent extends Component {
-  allList = [
-    {
-      src: '/icons/multimedia-video-player.svg',
+
+  @service
+  desktopservice;
+
+  allList = {
+    6: {
+      link: '/icons/multimedia-video-player.svg',
       name: 'video',
     },
-    {
-      src: '/icons/calculator.png',
+    7: {
+      link: '/icons/calculator.png',
       name: 'Calculator',
     },
-    {
-      src: '/icons/doc.png',
+    8: {
+      link: '/icons/doc.png',
       name: 'Document',
     },
-    {
-      src: '/icons/camera.png',
+    9: {
+      link: '/icons/camera.png',
       name: 'Cheese',
     },
-    {
-      src: '/icons/cpu.png',
+    10: {
+      link: '/icons/cpu.png',
       name: 'Additional Drivers',
     },
-    {
-      src: '/icons/ace-of-hearts.png',
+    11: {
+      link: '/icons/ace-of-hearts.png',
       name: 'Ace',
     },
-    {
-      src: '/icons/calendar.png',
+    12: {
+      link: '/icons/calendar.png',
       name: 'Calender',
     },
-    {
-      src: '/icons/translate.png',
+    13: {
+      link: '/icons/translate.png',
       name: 'Language',
     },
-    {
-      src: '/icons/google-docs.png',
+    14: {
+      link: '/icons/google-docs.png',
       name: 'LibereOffice Writer',
     },
-    {
-      src: '/icons/powerpoint.png',
+    15: {
+      link: '/icons/powerpoint.png',
       name: 'LibereOffice Impress',
     },
-    {
-      src: '/icons/xls.png',
+    16: {
+      link: '/icons/xls.png',
       name: 'LibereOffice Calc',
     },
-    {
-      src: '/icons/utorrent.png',
+    17: {
+      link: '/icons/utorrent.png',
       name: 'Utorrent',
     },
-  ];
+    18: {
+      link: '/icons/gnomeweb.png',
+      name: 'Web',
+    },
+  };
+   
+  @action
+  openApp(key){
+    if(!this.desktopservice.taskBarIcons[key]){
+      set(this.desktopservice.taskBarIcons,key , this.allList[key])
+      set(this.desktopservice,"currentOpenedAppId" , key);
+    }
+    set(this.desktopservice, 'currentApp', {});
+  }
+  
 }

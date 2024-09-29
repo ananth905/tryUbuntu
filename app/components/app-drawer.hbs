@@ -5,13 +5,13 @@
     </div>
 
     <div class="all-app-list grid justify-center items-center grid-cols-8 grid-rows-3">
-        {{#each this.allList as |app index|}}
-        <div class="app-container flex items-center flex-col justify-center">
-            <img class="app-icon" src={{app.src}}/>
+        {{#each-in this.allList as | index app|}}
+        <div class="app-container flex items-center flex-col justify-center" onclick={{fn this.openApp index}}>
+            <img class="app-icon" src={{app.link}}/>
             <div class="app-name whitespace-nowrap text-center">{{app.name}}</div>
         </div>
         
-        {{/each}}
+        {{/each-in}}
     </div>
 
 

@@ -27,8 +27,8 @@ body{
      }
      .taksbar{
         height: 100%;
-        width: 50px;
-        background: #211018c6;
+        width: 60px;
+        background: rgb(20 16 18);
         padding-top: 25px;
         >div{
             display: flex;
@@ -40,11 +40,32 @@ body{
         }
         .taskbaricon{
             margin-bottom: 15px;
+            padding: 7px 8px;
+            border-radius: 12px;
+            position: relative;
+            &.current-opened-app{
+              background: rgb(191 191 191 / 27%);
+            }
+            &.opened-app::after{
+              position: absolute;
+              left: 2px;
+              top: 50%;
+              content: "";
+              transform: translateY(-50%);
+              height: 5px;
+              width: 5px;
+              background: #e95420;
+              border-radius: 5px;
+            }
         }
         .taskbaricon,.startbtn{
             img{
               width: 40px;
               height: 40px;
+            }
+            i{
+              font-size: 32px;
+              margin-bottom: 18px;
             }
         }
      }
@@ -116,9 +137,6 @@ flex-grow: 1;
       width: 80px;
     }
     &:hover{
-      .app-name{
-        text-wrap:wrap
-      }
       background: #93939346;
       backdrop-filter: 50px;
       border-radius: 8px;

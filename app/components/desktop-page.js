@@ -10,24 +10,7 @@ export default class DesktopPageComponent extends Component {
 
   @tracked isTopSettingOpen = false;
 
-  iconList = [
-    {
-      link: '/icons/firefox.png',
-      appName: 'Firefrox',
-    },
-    {
-      link: '/icons/thunder.png',
-    },
-    {
-      link: '/icons/Rhythmbox-icon-new.png',
-    },
-    {
-      link: '/icons/lboffice.png',
-    },
-    {
-      link: '/icons/app-store.png',
-    },
-  ];
+  @tracked taskBarIconList
 
   taskBarTime = 'Apr 17 17:05';
 
@@ -41,13 +24,16 @@ export default class DesktopPageComponent extends Component {
     document.querySelector(
       '.wallpaper'
     ).style.backgroundImage = `url(${this.desktopservice.wallpaper})`;
+    this.taskBarIconList = this.desktopservice.taskBarIcons
   }
 
   @action
-  setCurrentApp(appname, toggle) {
-    if (this.desktopservice.appName && toggle)
-      set(this.desktopservice, 'appName', '');
-    else set(this.desktopservice, 'appName', appname);
+  setCurrentApp(appName, toggle , appId) {
+    if (this.desktopservice.currentApp?.appName && toggle)
+      set(this.desktopservice, 'currentApp', {});
+    else {
+     set(this.desktopservice, 'currentApp', {appName , appId });
+    }
   }
   @action
   toggleProperty(event) {
