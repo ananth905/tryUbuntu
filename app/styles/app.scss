@@ -271,21 +271,53 @@ flex-grow: 1;
 /// 
 .settings-container{
   font-weight: 600;
-  .settings-header{
-    height: 40px;
-    min-width: 950px;
+  .settings-section{
+      min-width: 950px;
    
     font-size: 12px;
     background: #e9e9e9;
     border: 1px solid #ababab95;
-    .lhs-header{
+    .lhs-section{
       width: 195px;
       border-right:  1px solid #ababab95;
       padding: 7px;
+      .settings-lhs-options{
+        padding-top: 10px;
+      }
+      .setting-option-icon{
+        width: 18px;
+        height: 18px;
+        margin-right: 12px;
+      }
+
+      .setting-option{
+        font-weight: lighter;
+        width: 100%;
+        margin: 5px 0;
+        border-radius: 5px;
+        padding: 5px 2px; 
+        height: 37px;
+        padding: 14px;
+        cursor: default;
+        &:hover, &.selected-setting {
+          background: rgb(19 19 19 / 10%);
+        }
+      }
+
+      .setting-option-divider{
+        width: 99%;
+        height: 1px;
+        background: #4d4c4c3d;
+        position: absolute;
+        bottom: -3px;
+        left: -1%;
+      }
+
+
     }
     .setting-header-icon{
-      background: #f8f8f8;
-      border: 1px solid #ababab95;
+      // background: #f8f8f8;
+      // border: 1px solid #ababab95;
       
       padding: 6.5px;
       &:hover{
