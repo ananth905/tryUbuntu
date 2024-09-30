@@ -1,0 +1,31 @@
+.ephiny-window{
+    width: 1207px;
+    height: 75vh;
+    background-color: #fafafa;
+    overflow: hidden;
+    .ephiny-topbar{
+        background: white;
+        height: 45px;
+        border-bottom: 1px solid #dcdcdc;
+        .browser-top-icons{
+            width: 17px;
+            margin: 0 12px;
+        }
+        // .back-icon img {
+        //     height: 17px;
+        // }
+        .search-bar{
+            width: 57%;
+            background: #f1f1f1;
+            height: 32px;
+            border-radius: 5px;
+        }
+        .icon-in-left{
+            margin-right: 54px;
+        }
+        .icon-in-right{
+            margin-left: 61px;
+            margin-right: 21px;
+        }
+    }
+}
