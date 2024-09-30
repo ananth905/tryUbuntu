@@ -1,4 +1,4 @@
-<div class="ephiny-window mt-5 br-14 absolute left-[2%] top-[2%]">
+<div class="ephiny-window mt-5 br-14 absolute left-[2%] top-[2%] flex flex-col">
   <div class="ephiny-topbar w-full flex items-center ">
     <div class="icon-in-left  flex">
         <div class="back-icon browser-top-icons">
@@ -14,7 +14,9 @@
             <img width="100" height="100" src="https://img.icons8.com/ios/100/plus-2-math.png" alt="plus-2-math" />
         </div>
     </div>
-    <div class="search-bar "></div>
+    <div class="search-bar ">
+        <input type="text" class="w-full outline-none bg-transparent px-2 h-full " placeholder="about:overview">
+    </div>
     <div class="icon-in-right flex">
         <div class="open-tabs browser-top-icons">
             <img src="https://img.icons8.com/ios/100/four-squares.png" alt="four-squares" />
@@ -29,6 +31,21 @@
     <WindowControl/>
   </div>
             {{!-- <WindowControl/> --}}
- 
+   <div class="preview-area content-area flex-grow grid place-items-center">
+      <div class="preview-tabs flex flex-wrap ">
+        {{#each this.previewTabs as | tab index |}}
+          <div class={{concat "preview-tab-container relative flex items-center flex-col" (if (lt tab.id 7) " large-bt ")}}>
+            <div class="preview-tab grid place-items-center">
+                <img src={{tab.link}} alt="" class="preview-image">
+            </div>
+            <div class="preview-tab-name mt-1">{{tab.name}}</div>
+            <div class="preview-close-btn grid place-items-center">
+               <i class="fa-solid fa-xmark"></i>     
+            </div>
+          </div>
+        {{/each}}
+         
+      </div>
+   </div>
 </div>
 {{yield}}

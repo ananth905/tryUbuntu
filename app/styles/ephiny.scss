@@ -19,6 +19,14 @@
             background: #f1f1f1;
             height: 32px;
             border-radius: 5px;
+            &:has(input:focus){
+                border: 2px solid #e954206b;
+            }
+            input::placeholder{
+              font-size: 15px;
+              padding-left: 4px;
+              color: #434343cf;
+            }
         }
         .icon-in-left{
             margin-right: 54px;
@@ -26,6 +34,44 @@
         .icon-in-right{
             margin-left: 61px;
             margin-right: 21px;
+        }
+    }
+    .preview-area{
+        // height: ;
+    }
+    .preview-tabs{
+        width: 850px;
+        .preview-tab-container{
+            width: 249px;
+            height: 185px;
+            margin: 5px 9px;
+            .preview-tab {
+              background: #ffffff;
+              border: 1px solid #e1e1e1;
+              height: 83%;
+              border-radius: 12px;
+              width: 100%;
+            } 
+            .preview-tab-name{
+                opacity: 0.7;
+            }
+            &.large-bt{
+                margin-bottom: 15px;
+            }
+            .preview-close-btn{
+                background: #cacaca;
+                height: 22px;
+                width: 22px;
+                position: absolute;
+                right: 10px;
+                top: 10px;
+                border-radius: 25px;
+                color: #ffffff;
+                // font-size: 13.5px;
+            }
+            .preview-image{
+                width: 36%;
+            }
         }
     }
 }
