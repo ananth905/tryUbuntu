@@ -1,0 +1,28 @@
+<div class="ubuntu-desktop-tab-container settings-tab-page ">
+    <div class="ubuntu-desktop-settings-list pt-11 flex flex-col items-center">
+
+        <div class="settings-strap-heading  ">
+            <span>Desktop Icons</span>
+        </div>
+        <div class="settings-strap-container w-full ">
+        <div class="settings-strap">
+            <div class="strap-name">Size</div>
+            <div class="ubuntu-power-select">
+                <PowerSelect @options={{this.names}} @onChange={{this.foo}}  as |name|>
+                     {{name}}
+                </PowerSelect>
+            </div>
+        </div>
+        <div class="settings-strap ">
+            <div class="strap-name">Position of New Folder</div>
+            <div class="opacity-50">Connected</div>
+        </div>
+        <div class="settings-strap ">
+            <div class="strap-name">Show Home Folder</div>
+             <XToggle @value={{this.myValue}} @onToggle={{fn (mut this.myValue)}} @theme='light' @size="small"/>
+        </div>
+        </div>
+
+</div>
+</div>
+{{yield}}

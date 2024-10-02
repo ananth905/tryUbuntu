@@ -53,7 +53,8 @@ export default class SettingsContainer extends Component {
             id: 8,
             name: "Ubuntu Desktop",
             icon: "https://img.icons8.com/ios/100/linux-client.png",
-            bottomLine: true
+            bottomLine: true,
+            component:"ubuntu-desktop"
         },
         {
             id: 9,
@@ -123,7 +124,7 @@ export default class SettingsContainer extends Component {
 
     constructor(){
       super(...arguments);
-      this.currentScreen= this.settingsOption[1]
+      this.currentScreen= this.settingsOption[8]
     }
 
     @action
