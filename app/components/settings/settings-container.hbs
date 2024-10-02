@@ -22,13 +22,15 @@
                 {{/each}}
             </div>
         </div>
-        <div class="rhs-section flex-grow ">
+        <div class="rhs-section flex-grow flex flex-col">
           <div class="rhs-sectioin-heading flex items-center justify-between w-full h-9">
             <div></div>
             <div class="current-setting-menu">{{this.currentScreen.name}}</div>
             <WindowControl/>
           </div> 
-             
+           <div class="rhs-section-content">
+             {{component (concat "settings/pages/" this.currentScreen.component)}}
+           </div>   
         </div>
     </div>
 </div>

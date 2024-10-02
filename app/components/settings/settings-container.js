@@ -14,13 +14,15 @@ export default class SettingsContainer extends Component {
         {
             id: 1,
             name: "Network",
-            icon: "https://img.icons8.com/forma-thin/96/stack.png"
+            icon: "https://img.icons8.com/forma-thin/96/stack.png",
+            component:"network"
         },
         {
             id: 2,
             name: "Bluetooth",
             icon: "https://img.icons8.com/ios/50/bluetooth-2.png",
-            bottomLine: true
+            bottomLine: true,
+            component:"bluetooth"
         },
         {
             id: 3,
@@ -121,7 +123,7 @@ export default class SettingsContainer extends Component {
 
     constructor(){
       super(...arguments);
-      this.currentScreen= this.settingsOption[0]
+      this.currentScreen= this.settingsOption[1]
     }
 
     @action
