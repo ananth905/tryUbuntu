@@ -40,6 +40,15 @@
         .forward-icon {
             width: 20px;
         }
+        .settings-strap-icons-right{
+            width: 22px;
+        }
+        .x-toggle:checked + label > .x-toggle-light.x-toggle-btn{
+            background-color: #e95420;
+        }
+        .x-toggle-component.x-toggle-focused .x-toggle-btn:not(.x-toggle-disabled)::after, .x-toggle-component.x-toggle-focused .x-toggle-btn:not(.x-toggle-disabled)::before{
+            box-shadow: none;
+        }
     }
     .settings-strap,.settings-strap-heading,.settings-info{
         max-width: 575px;

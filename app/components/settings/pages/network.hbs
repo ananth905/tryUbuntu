@@ -8,9 +8,9 @@
         <div class="settings-strap-container">
             <div class="settings-strap  ">
                 <div class="strap-name">Cable unplugged</div>
-                <div>
-                    {{!-- //switch --}}
-                    <img class="settings-page-icon setting-plus-icon"
+                <div class="flex justify-between w-[90px] items-center">
+                    <XToggle @value={{this.myValue}} @onToggle={{fn (mut this.myValue)}} @theme='light' @size="small"/>
+                    <img class="settings-strap-icons-right"
                         src="https://img.icons8.com/ios-glyphs/60/settings--v1.png" alt="settings--v1" />
                 </div>
             </div>
