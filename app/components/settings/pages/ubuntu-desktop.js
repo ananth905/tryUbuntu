@@ -5,8 +5,11 @@ import { action } from '@ember/object';
 export default class SettingsContainer extends Component {
     myValue = 0
 
-    names = ['Stefan', 'Miguel', 'Tomster', 'Pluto'];
+    allSize = ['Small', 'Normal', 'Large', 'Tiny'];
+    selectedSize = "Normal";
 
+    homeFolderPosition = ["Top left","Top Right","Bottom Left","Bottom Right"]
+    selectedPosition = "Top Left"
     @action
     foo() {}
 }

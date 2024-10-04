@@ -8,14 +8,16 @@
         <div class="settings-strap">
             <div class="strap-name">Size</div>
             <div class="ubuntu-power-select">
-                <PowerSelect @options={{this.names}} @onChange={{this.foo}}  as |name|>
+                <PowerSelect @options={{this.allSize}} @selected={{this.selectedSize}} @onChange={{this.foo}}  @open={{true}} @dropdownClass="ubuntu-power-down" @triggerClass="ubuntu-power-trigger" as |name|>
                      {{name}}
                 </PowerSelect>
             </div>
         </div>
         <div class="settings-strap ">
             <div class="strap-name">Position of New Folder</div>
-            <div class="opacity-50">Connected</div>
+            <PowerSelect @options={{this.homeFolderPosition}} @selected={{this.selectedPosition}} @onChange={{this.foo}}  @open={{true}} @dropdownClass="ubuntu-power-down" @triggerClass="ubuntu-power-trigger" as |name|>
+                     {{name}}
+            </PowerSelect>
         </div>
         <div class="settings-strap ">
             <div class="strap-name">Show Home Folder</div>

@@ -2,6 +2,7 @@
 @import "common";
 @import "ephiny";
 @import "settings";
+@import "ember-power-select";
 body{
     padding: 0;
     margin: 0;
@@ -349,4 +350,49 @@ flex-grow: 1;
     }
   }
 }
-@import "ember-power-select";
+
+.ubuntu-power-trigger{
+  border: none !important
+}
+
+.ubuntu-power-down {
+  margin-top: 10px;
+  min-width: 120px;
+  border: none;
+  overflow: visible;
+  box-shadow: 0px 0px 12px 1px rgb(24 24 24 / 20%);
+  padding: 7px;
+  border-radius: 8px !important;
+  &::after{
+    position: absolute;
+    content: "";
+    /* width: 14px; */
+    /* height: 14px; */
+    /* background: red; */
+    top: -10px;
+    z-index: 10;
+    left: 50%;
+    transform: translateX(-50%);
+    /* border: none; */
+    border-bottom: 10px solid #ffffff;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+  }
+  .ember-power-select-option {
+    cursor: pointer;
+    padding: 3px 10px;
+    border-radius: 5px;
+    font-weight: lighter;
+    font-size: 14px;
+}
+.ember-power-select-option[aria-current=true],.ember-power-select-option[aria-selected=true]:hover {
+  background: #72747724 ;
+  color: inherit;
+}
+.ember-power-select-option[aria-selected=true] {
+  background-color: transparent;
+}
+ .ember-power-select-trigger:focus{
+  border: none !important;
+ }
+}
