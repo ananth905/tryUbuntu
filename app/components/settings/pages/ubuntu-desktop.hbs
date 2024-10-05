@@ -5,26 +5,90 @@
             <span>Desktop Icons</span>
         </div>
         <div class="settings-strap-container w-full ">
-        <div class="settings-strap">
-            <div class="strap-name">Size</div>
-            <div class="ubuntu-power-select">
-                <PowerSelect @options={{this.allSize}} @selected={{this.selectedSize}} @onChange={{this.foo}}  @open={{true}} @dropdownClass="ubuntu-power-down" @triggerClass="ubuntu-power-trigger" as |name|>
-                     {{name}}
+            <div class="settings-strap">
+                <div class="strap-name">Size</div>
+                <div class="ubuntu-power-select">
+                    <PowerSelect @options={{this.allSize}} @selected={{this.selectedSize}} @onChange={{this.foo}}
+                        @open={{true}} @dropdownClass="ubuntu-power-down" @triggerClass="ubuntu-power-trigger" as
+                        |name|>
+                        <span class="powerselect-options ">{{name}}</span> <img width="12" height="12" class={{concat
+                            (unless (eq this.selectedSize name) " hidden" ) " tick-image" }}
+                            src="https://img.icons8.com/material-rounded/24/checkmark--v1.png" alt="checkmark--v1" />
+                    </PowerSelect>
+                </div>
+            </div>
+            <div class="settings-strap ">
+                <div class="strap-name">Position of New Folder</div>
+                <PowerSelect @options={{this.homeFolderPosition}} @selected={{this.selectedPosition}}
+                    @onChange={{this.foo}} @open={{true}} @dropdownClass="ubuntu-power-down"
+                    @triggerClass="ubuntu-power-trigger" as |name|>
+                    {{name}}
                 </PowerSelect>
             </div>
+            <div class="settings-strap ">
+                <div class="strap-name">Show Home Folder</div>
+                <XToggle @value={{this.myValue}} @onToggle={{fn (mut this.myValue)}} @theme='light' @size="small" />
+            </div>
+        </div>
+        <div class="settings-strap-heading mt-8 ">
+            <span>Dock</span>
+        </div>
+        <div class="settings-strap-container w-full ">
+        <div class="settings-strap">
+            <div class="strap-name">
+                <div class="main-start-content">Auto-hide the Dock</div>
+                <div class="main-start-description">The dock hides when any windows overlap with it</div>
+            </div>
+            <XToggle @value={{this.myValue}} @onToggle={{fn (mut this.myValue)}} @theme='light' @size="small" />
+          
         </div>
         <div class="settings-strap ">
-            <div class="strap-name">Position of New Folder</div>
-            <PowerSelect @options={{this.homeFolderPosition}} @selected={{this.selectedPosition}} @onChange={{this.foo}}  @open={{true}} @dropdownClass="ubuntu-power-down" @triggerClass="ubuntu-power-trigger" as |name|>
-                     {{name}}
-            </PowerSelect>
+            <div class="strap-name">Poannel Mode</div>
+             <XToggle @value={{this.myValue}} @onToggle={{fn (mut this.myValue)}} @theme='light' @size="small" />
         </div>
         <div class="settings-strap ">
-            <div class="strap-name">Show Home Folder</div>
-             <XToggle @value={{this.myValue}} @onToggle={{fn (mut this.myValue)}} @theme='light' @size="small"/>
+            <div class="strap-name">Icon Size</div>
+            <XToggle @value={{this.myValue}} @onToggle={{fn (mut this.myValue)}} @theme='light' @size="small" />
+        </div>
+         <div class="settings-strap">
+                <div class="strap-name">Position on Screen</div>
+                <div class="ubuntu-power-select">
+                    <PowerSelect @options={{this.allPosition}} @selected={{this.selectedDockPosition}} @onChange={{this.foo}}
+                        @open={{true}} @dropdownClass="ubuntu-power-down" @triggerClass="ubuntu-power-trigger" as
+                        |name|>
+                        <span class="powerselect-options ">{{name}}</span> <img width="12" height="12" class={{concat
+                            (unless (eq this.selectedSize name) " hidden" ) " tick-image" }}
+                            src="https://img.icons8.com/material-rounded/24/checkmark--v1.png" alt="checkmark--v1" />
+                    </PowerSelect>
+                </div>
+            </div>
+             <div class="settings-strap ">
+                <div class="strap-name">Configure Dock Behaviour</div>
+                <div class="flex">
+                    <img class="forward-icon" src="https://img.icons8.com/ios/100/forward--v1.png" alt="forward--v1" />
+                </div>
+            </div>
+       </div>
+       <div class="settings-strap-heading mt-8 ">
+            <span>Enhanced Tiling</span>
+              <XToggle @value={{this.myValue}} @onToggle={{fn (mut this.myValue)}} @theme='light' @size="small" />
+        </div>
+        <div class="settings-strap-container w-full">
+                   <div class="settings-strap">
+            <div class="strap-name">
+                <div class="main-start-content">Tiling Popup</div>
+                <div class="main-start-description">Show a list of open apps to fill empty screen after tiling a window</div>
+            </div>
+            <XToggle @value={{this.myValue}} @onToggle={{fn (mut this.myValue)}} @theme='light' @size="small" />
+          
+        </div>
+        <div class="settings-strap ">
+            <div class="strap-name"><div class="main-start-content">Tile Groups</div>
+                <div class="main-start-description">Kepp Windows Grouped together when tiled, so that raisign one brings up the group</div></div>
+             <XToggle @value={{this.myValue}} @onToggle={{fn (mut this.myValue)}} @theme='light' @size="small" />
         </div>
         </div>
-
+                  
 </div>
 </div>
 {{yield}}

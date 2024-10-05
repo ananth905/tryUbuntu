@@ -352,7 +352,10 @@ flex-grow: 1;
 }
 
 .ubuntu-power-trigger{
-  border: none !important
+  border: none !important;
+  .tick-image{
+    display: none !important;
+  }
 }
 
 .ubuntu-power-down {
@@ -391,6 +394,12 @@ flex-grow: 1;
 }
 .ember-power-select-option[aria-selected=true] {
   background-color: transparent;
+  display: flex;
+  align-items: center;
+  img{
+    width: 14px;
+    height: 14px;
+  }
 }
  .ember-power-select-trigger:focus{
   border: none !important;

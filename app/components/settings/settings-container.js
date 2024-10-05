@@ -9,7 +9,8 @@ export default class SettingsContainer extends Component {
         {
             id: 0,
             name: "Wi-Fi",
-            icon: "https://img.icons8.com/forma-light/24/wifi.png"
+            icon: "https://img.icons8.com/forma-light/24/wifi.png",
+            component:"wifi"
         },
         {
             id: 1,
@@ -124,7 +125,7 @@ export default class SettingsContainer extends Component {
 
     constructor(){
       super(...arguments);
-      this.currentScreen= this.settingsOption[8]
+      this.currentScreen= this.settingsOption[0]
     }
 
     @action
