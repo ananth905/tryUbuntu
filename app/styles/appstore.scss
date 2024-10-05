@@ -1,0 +1,63 @@
+.explore-settings-list{
+    padding: 0 30px;
+    max-width: 900px;
+
+} 
+.featured-app{
+    // width: 100%;
+    height: 230px;
+    background: linear-gradient(90deg,#271858,#3bde73);
+    min-width: 850px;
+    border-radius: 10px;
+    padding: 0 45px;
+}
+.discover-button{
+    width: fit-content;
+    border-radius: 4px;
+}
+.featured-snap-icon{
+    width: 60px;
+    height: 60px;
+    padding: 8px;
+    background: white;
+    margin-right: 24px;
+    border-radius: 8px;
+}
+.explore-app-list {
+    margin-top: 28px;
+    overflow-x: auto;
+    max-height: 575px;
+}
+.app-tile-icon{
+    width: 50px;
+    height: 50px;
+    margin-right: 13px;
+}
+.app-tile {
+    border: 2px solid #dcdcdc;
+    width: 390px;
+    height: 164px;
+    padding: 15px 20px;
+    border-radius: 10px;
+    display: flex;
+    margin: 10px;
+
+    .app-tile-name {
+        margin-top: 4px;
+        font-size: 16px;
+        font-weight: lighter ;
+    }
+    .app-tile-developer{
+        margin-top: 5px;
+        font-weight: lighter ;
+        font-size: 14px;
+        opacity: 0.5;
+    }
+    .app-tile-description{
+        font-size: 14px;
+    }
+    .app-tile-description,.app-tile-review{
+        margin-top: 8px;
+        font-weight: lighter ;
+    }
+}

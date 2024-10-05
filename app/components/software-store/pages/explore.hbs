@@ -1,0 +1,42 @@
+<div class="explore-tab-container settings-tab-page ">
+    <div class="explore-settings-list pt-11 flex flex-col items-center">
+      <div class="featured-app flex text-white items-center justify-between">
+         <div class="featured-snaps  font-normal flex flex-col">
+            <span class="  text-xl">Featured Snaps</span>
+            <div class="discover-button font-medium mt-4 border border-white px-2 py-1">Discover More</div>
+         </div>
+         <div class="featured-app-snaps flex">
+            {{#each this.featuredSnaps as |snap index |}}
+               <div class="featured-snap-icon"> 
+                <img src={{snap.link}} alt="">
+               </div>
+               <div class="featured-span-name hidden">{{snap.name}}</div>
+            {{/each}}
+         </div>
+      </div>
+
+<div class="explore-app-list app-store-list flex flex-wrap">
+
+    {{#each this.snapList as |snap index|}}
+    <div class="app-tile font-normal">
+        <div class="app-tile-icon">
+            <img src={{snap.icon}} alt="">
+        </div>
+        <div class="app-tile-details">
+            <div class="app-tile-name">{{snap.appName}}</div>
+            <div class="app-tile-developer">{{snap.developedBy}}</div>
+            <div class="app-tile-description">
+                {{snap.description}}
+            </div>
+            <div class="app-tile-review">
+                <span class="app-remark">Very Good</span>
+                <span class="cmt-sep">|</span>
+                <span class="app-vote">{{snap.review}} vote</span>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>
+    </div>
+</div>
+{{yield}}

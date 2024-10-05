@@ -1,0 +1,31 @@
+<div class="settings-container mt-5 h-full">
+    <div class="settings-section rounded-md flex h-full">
+        <div class="lhs-section lhs-section-bg app-center-lhs">
+            <div class="search-icon text-center mb-3 mt-2">
+                <div class="current-menu">App Center</div>
+            </div>
+            <div class="settings-lhs-options">
+                {{#each this.settingsOption as |setting index|}}
+                <div class={{concat "setting-option relative flex items-center " (if (eq index this.currentScreen.id) " selected-setting ")}} onclick={{fn this.setCurrentScreen index}}>
+                    <img class="setting-option-icon" src={{setting.icon}} />
+                    <div class="settings-option-name">{{setting.name}}</div>
+                    {{#if setting.bottomLine}}
+                    <div class="setting-option-divider"></div>
+                    {{/if}}
+                </div>
+                {{/each}}
+            </div>
+        </div>
+        <div class="rhs-section flex-grow flex flex-col">
+          <div class="rhs-sectioin-heading flex items-center justify-between w-full h-9">
+            <div></div>
+            <div class="current-setting-menu">{{this.currentScreen.name}}</div>
+            <WindowControl/>
+          </div> 
+           <div class="rhs-section-content">
+             {{component (concat "software-store/pages/" this.currentScreen.component)}}
+           </div>   
+        </div>
+    </div>
+</div>
+{{yield}}
