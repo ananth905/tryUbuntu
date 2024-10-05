@@ -290,6 +290,10 @@ flex-grow: 1;
 
 ///settings-container-----
 /// 
+.lhs-section-bg{
+  background:#f2f2f2;
+  border-right:  1px solid #ababab95;
+}
 .settings-container{
   font-weight: 600;
   .settings-section{
@@ -299,9 +303,9 @@ flex-grow: 1;
     border: 1px solid #ababab95;
     .lhs-section{
       width: 234px;
-      border-right:  1px solid #ababab95;
+     
       padding: 7px;
-      background:#f2f2f2 ;
+      
       .settings-lhs-options{
         padding-top: 10px;
       }

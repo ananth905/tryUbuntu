@@ -1,12 +1,12 @@
 <div class="window-control-container flex flex-row-reverse pr-2">
-    <div class="window-control-icon flex items-center justify-center">
+    <div class="window-control-icon flex items-center justify-center" onclick={{fn this.closeCurrentApp true}}>
         <img width="11" height="11" src="https://img.icons8.com/sf-regular/48/delete-sign.png" alt="delete-sign"/>
     </div>
     <div class="window-control-icon mx-3 flex items-center justify-center">
         <img width="11" height="11" src="https://img.icons8.com/ios-glyphs/90/square-90.png" alt="square-90"/>
     </div>
     <div class="window-control-icon flex items-center justify-center">
-        <img width="12" height="12" src="https://img.icons8.com/ios/100/minus-math.png" alt="minus-math"/>
+        <img width="12" height="12" src="https://img.icons8.com/ios/100/minus-math.png" alt="minus-math" onclick={{fn this.closeCurrentApp false}}/>
     </div>
 </div>
 

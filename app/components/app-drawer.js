@@ -68,6 +68,7 @@ export default class AppDrawerComponent extends Component {
       set(this.desktopservice.taskBarIcons,key , this.allList[key])
       set(this.desktopservice,"currentOpenedAppId" , key);
     }
+    set(this.desktopservice,"taskBarIcons",this.desktopservice.taskBarIcons)
     set(this.desktopservice.currentApp,'appName', this.allList[key].componentPath);
   }
   

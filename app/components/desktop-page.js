@@ -10,8 +10,6 @@ export default class DesktopPageComponent extends Component {
 
   @tracked isTopSettingOpen = false;
 
-  @tracked taskBarIconList
-
   taskBarTime = 'Apr 17 17:05';
 
   init() {
@@ -24,7 +22,7 @@ export default class DesktopPageComponent extends Component {
     document.querySelector(
       '.wallpaper'
     ).style.backgroundImage = `url(${this.desktopservice.wallpaper})`;
-    this.taskBarIconList = this.desktopservice.taskBarIcons
+
   }
 
   @action

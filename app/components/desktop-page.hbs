@@ -5,7 +5,7 @@
     <div class="taksbar">
         <div>
           <div class="applist">
-            {{#each-in this.taskBarIconList as |index icon | }}
+            {{#each-in this.desktopservice.taskBarIcons as |index icon | }}
               <div class={{concat "taskbaricon " (if (eq index this.desktopservice.currentOpenedAppId ) " opened-app current-opened-app")}}>
                <img src={{icon.link}} alt="">  
               </div>
