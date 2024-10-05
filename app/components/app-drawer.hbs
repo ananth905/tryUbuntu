@@ -4,7 +4,7 @@
         <span class="text-xs">Type to search</span>
     </div>
 
-    <div class="all-app-list grid justify-center items-center grid-cols-8 grid-rows-3">
+    <div class="all-app-list grid justify-center items-center grid-cols-6 grid-rows-3">
         {{#each-in this.allList as | index app|}}
         <div class="app-container flex items-center flex-col justify-center" onclick={{fn this.openApp index}}>
             <img class="app-icon" src={{app.link}}/>

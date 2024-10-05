@@ -58,6 +58,7 @@ export default class AppDrawerComponent extends Component {
     18: {
       link: '/icons/gnomeweb.png',
       name: 'Web',
+      componentPath:"installed-apps/ephiny/web"
     },
   };
    
@@ -67,7 +68,7 @@ export default class AppDrawerComponent extends Component {
       set(this.desktopservice.taskBarIcons,key , this.allList[key])
       set(this.desktopservice,"currentOpenedAppId" , key);
     }
-    set(this.desktopservice, 'currentApp', {});
+    set(this.desktopservice.currentApp,'appName', this.allList[key].componentPath);
   }
   
 }

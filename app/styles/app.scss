@@ -120,28 +120,28 @@ flex-grow: 1;
     margin: 0 auto;
     margin-top: 100px;
     grid-row-gap: 35px;
-    width: 80%;
+    width: 60%;
     height:450px;
 
   }
   .app-container{
     color: #dfdfdf;
-    width: 100px;
-    height: 120px;
+    width: 160px;
+    height: 160px;
     .app-icon{
-      width: 45px;
-      height: 45px;
+      width: 70px;
+      height: 70px;
     }
     .app-name{
       margin-top: 2px;
       overflow: hidden;
       text-overflow: ellipsis;
       text-wrap: nowrap;
-      width: 80px;
+      width: 160px;
     }
     &:hover{
       background: #93939346;
-      backdrop-filter: 50px;
+      backdrop-filter: blur(50px);
       border-radius: 8px;
     }
   }
