@@ -1,4 +1,4 @@
- <div class="top-setting-container absolute" {{on-click-outside this.args.toggleProperty}}>
+ <div class="top-setting-container absolute" {{on-click-outside this.args.toggleProperty}} {{did-insert this.styleInputSlider}}>
   <div class="rounded-tiles flex w-full justify-between">
     <div class="rounded-tile battery">
       <img width="14" height="14" class="top-line-icon" src="https://img.icons8.com/ios-filled/100/battery-.png" alt="battery-"/>
@@ -22,13 +22,13 @@
    <div class="valume-input flex items-center  justify-center">
     <div class="flex top-settingoption  w-full items-center justify-center">
        <img class="top-settings-icon" src="/icons/volume.png" alt="">
-       <input type="range" class="top-settings-icon" name="" id="" {{action this.setVolume}}>
+        <div id="range-slider" class="range-slider"></div>
      </div>
    </div>
    <div class="valume-input flex items-center  justify-center">
     <div class="flex top-settingoption  w-full items-center justify-center">
-       <img  class="top-settings-icon" src="https://img.icons8.com/external-creatype-glyph-colourcreatype/64/external-brightness-essential-ui-v1-creatype-glyph-colourcreatype.png" />
-       <input type="range" name="" id="" {{action this.setVolume}}>
+       <img  class="top-settings-icon" src="https://img.icons8.com/material/24/sun--v1.png" />
+        <div id="brightness"  class="range-slider "></div>
      </div>
    </div>
    <div class="settings-shortcut justify-center flex flex-wrap">

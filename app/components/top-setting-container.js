@@ -23,15 +23,15 @@ export default class TopSettingContainerComponent extends Component {
       description: 'Balanced',
     },
     {
-      src: '/icons/setting.png',
+      src: 'https://img.icons8.com/fluency-systems-filled/50/moon.png',
       name: 'Night Light',
     },
     {
-      src: '/icons/lock.png',
+      src: 'https://img.icons8.com/ios-filled/100/do-not-disturb-2.png',
       name: 'Dark Style',
     },
     {
-      src: '/icons/power.png',
+      src: 'https://img.icons8.com/ios-filled/100/airport.png',
       name: 'Airplane Mode',
     },
   ];
@@ -48,5 +48,19 @@ export default class TopSettingContainerComponent extends Component {
       .closest('.settingoption')
       .querySelector('.subcatItem')
       .classList.remove('h-0', 'overflow-hidden');
+  }
+
+  @action
+  styleInputSlider(){
+    rangeSlider(document.querySelector('#range-slider'), {
+      value: [0, 50],
+      thumbsDisabled: [true, false],
+      rangeSlideDisabled: true
+    })
+    rangeSlider(document.querySelector('#brightness'), {
+      value: [0, 50],
+      thumbsDisabled: [true, false],
+      rangeSlideDisabled: true
+    })
   }
 }
