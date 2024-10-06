@@ -2,8 +2,6 @@ import Component from '@ember/component';
 import { service } from '@ember/service';
 import { action, set } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
-import * as htmlToImage from 'html-to-image';
-import { toPng, toJpeg, toBlob, toPixelData, toSvg } from 'html-to-image';
 
 export default class DesktopPageComponent extends Component {
   @service
@@ -40,11 +38,13 @@ export default class DesktopPageComponent extends Component {
     if (this.desktopservice.currentApp?.appName == 'app-drawer' && toggle)
       set(this.desktopservice, 'currentApp', {});
     else {
-      const dataUrl = await htmlToImage.toPng(document.querySelector('.desktop-container'),{ 
-        quality: 0.1
-      })
-       
-          this.dekstopScreenShot = dataUrl;  
+      const desktopNode = document.querySelector('.desktop-container')
+      const clonedElement = desktopNode.cloneNode(true) ;
+      clonedElement.querySelector(".taksbar").remove();
+      clonedElement.querySelector(".topbar").remove();
+
+
+          this.dekstopScreenShot = clonedElement;  
      set(this.desktopservice, 'currentApp', {appName , appId });
     }
   }

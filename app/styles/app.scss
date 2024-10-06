@@ -154,6 +154,13 @@ flex-grow: 1;
   width: 370px;
   margin: 10px;
   margin-top: 27px;
+  position: relative;
+  .desktop-container{
+    transform: scale(0.1979, 0.1856);
+    position: fixed;
+    top: -294px;
+    left: -165px;
+  }
 }
 
 .ethernet-menu{
