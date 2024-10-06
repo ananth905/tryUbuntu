@@ -6,13 +6,13 @@
         <div>
           <div class="applist">
             {{#each-in this.desktopservice.taskBarIcons as |index icon | }}
-              <div class={{concat "taskbaricon " (if (eq index this.desktopservice.currentOpenedAppId ) " opened-app current-opened-app")}}>
+              <div class={{concat "taskbaricon " (if (eq index this.desktopservice.currentOpenedAppId ) " opened-app current-opened-app")}} onclick={{action this.setCurrentApp icon.component true index}}>
                <img src={{icon.link}} alt="">  
               </div>
             {{/each-in}}
 
           </div>
-          <div class="startbtn" {{action this.setCurrentApp 'app-drawer' true 1}}>
+          <div class="startbtn" {{action this.openAppDrawer}}>
              <i class="fa-brands fa-ubuntu text-2xl text-white"></i>
           </div>
         </div>
@@ -33,10 +33,10 @@
       </div>
     </div>
 
-   {{#if this.desktopservice.currentApp.appName}}
-    {{component this.desktopservice.currentApp.appName}}
+   {{#if (and this.desktopservice.currentApp.appName this.dekstopScreenShot)}}
+    {{component this.desktopservice.currentApp.appName dekstopScreenShot = this.dekstopScreenShot}}
     {{!-- <InstalledApps::Ephiny::Web/> --}}
-    {{!-- <Settings::SettingsContainer/> --}}
+    {{!-- <SoftwareStore::SoftwareStore/> --}}
    {{/if }}
 
 

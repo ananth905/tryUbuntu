@@ -3,6 +3,12 @@
         <img src="/icons/searchicon.png" alt="" class="wh18 mr-1">
         <span class="text-xs">Type to search</span>
     </div>
+    <div class="desktops-pans flex">
+        <div class="desktop-one desktop-pane">
+            <img class="desktop-one-img w-full h-full" {{did-insert this.insertDesktopImg}}>
+        </div>
+        <div class="desktop-two desktop-pane"></div>
+    </div>
 
     <div class="all-app-list grid justify-center items-center grid-cols-6 grid-rows-3">
         {{#each-in this.allList as | index app|}}

@@ -72,4 +72,15 @@ export default class AppDrawerComponent extends Component {
     set(this.desktopservice.currentApp,'appName', this.allList[key].componentPath);
   }
   
+  @action
+  insertDesktopImg(){
+    const taskbar = document.querySelector('.taksbar');
+    const topbar = document.querySelector('.topbar');
+
+    document.querySelector('.desktop-one-img').src = this.args.dekstopScreenShot;
+
+    // Restore the child divs after the screenshot is taken
+    taskbar.style.display = 'block';
+    topbar.style.display = 'flex';
+  }
 }

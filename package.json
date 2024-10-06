@@ -83,5 +83,8 @@
   },
   "ember": {
     "edition": "octane"
+  },
+  "dependencies": {
+    "html-to-image": "^1.11.11"
   }
 }

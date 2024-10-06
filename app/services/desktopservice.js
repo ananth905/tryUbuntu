@@ -4,7 +4,7 @@ import { tracked } from '@glimmer/tracking';
 export default class DesktopserviceService extends Service {
  @tracked currentApp = {};
   wallpaper =
-    'https://getwallpapers.com/wallpaper/full/5/e/a/821188-korra-wallpapers-1920x1080-for-iphone-5s.jpg';
+    '/NobleNumbat.jpg';
 
   @tracked taskBarIcons  = {
     1: {
@@ -22,6 +22,7 @@ export default class DesktopserviceService extends Service {
     },
     5: {
       link: '/icons/app-store.png',
+      component:'software-store/software-store'
     },
   };
 
