@@ -35,16 +35,12 @@ export default class DesktopPageComponent extends Component {
 
   @action
   async setCurrentApp(appName, toggle , appId) {
-    if (this.desktopservice.currentApp?.appName == 'app-drawer' && toggle)
+    if (this.desktopservice.currentApp?.appName == 'app-drawer' && toggle){
       set(this.desktopservice, 'currentApp', {});
+      document.querySelector('.desktop-workspace').classList.remove('scale-workspace')
+    }
     else {
-      const desktopNode = document.querySelector('.desktop-container')
-      const clonedElement = desktopNode.cloneNode(true) ;
-      clonedElement.querySelector(".taksbar").remove();
-      clonedElement.querySelector(".topbar").remove();
 
-
-          this.dekstopScreenShot = clonedElement;  
      set(this.desktopservice, 'currentApp', {appName , appId });
     }
   }

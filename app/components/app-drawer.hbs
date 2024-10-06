@@ -5,12 +5,11 @@
     </div>
     <div class="desktops-pans flex">
         <div class="desktop-one desktop-pane" {{did-insert this.insertDesktopImg}}>
-            <img class="desktop-one-img w-full h-full" >
         </div>
         <div class="desktop-two desktop-pane"></div>
     </div>
 
-    <div class="all-app-list grid justify-center items-center grid-cols-6 grid-rows-3">
+    <div class="all-app-list grid justify-center items-center grid-cols-6 grid-rows-3" {{did-insert this.openAppList}}>
         {{#each-in this.allList as | index app|}}
         <div class="app-container flex items-center flex-col justify-center" onclick={{fn this.openApp index}}>
             <img class="app-icon" src={{app.link}}/>

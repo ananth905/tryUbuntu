@@ -34,6 +34,8 @@ body{
         width: 60px;
         background: rgb(20 16 18);
         padding-top: 25px;
+        position: absolute;
+        left: 0;
         >div{
             display: flex;
             flex-direction: column;
@@ -79,10 +81,11 @@ body{
         position: absolute;
         z-index: 1;
         top: 0;
-        height: 20px;
+        height: 32px;
         width: 100%;
         display: flex;
         justify-content: space-between;
+        align-items: center;
         background-color:#131313;
       .displaytime{
         font-size: 12px;
@@ -97,17 +100,30 @@ body{
       }
     }
 
+    .desktop-workspace{
+      height: calc(100% - 20px);
+      width: calc(100% - 60px);
+      top: 20px;
+      transform: scale(1,1);
+      transition: transform ease 0.25s;
+      position: absolute;
+      left: 60px;
+
+      &.scale-workspace{
+        transform: scale(0.1979, 0.1856);
+        // position: fixed;
+        top: -250px;
+        left: -162px;
+      }
+    }
 }
 
 
 .app-drawer{
-  // position: absolute;
-  // top: 20px;
-  // left: 50px;
+  height: calc(100% - 20px);
+  flex-grow: 1;
+  background: rgba(0, 0, 0, 0.91);
   margin-top: 20px;
-flex-grow: 1;
-
-  background: rgba(0, 0, 0, 0.649);
   .searchbox{
     margin-top: 20px;
     width: 250px;
@@ -119,10 +135,15 @@ flex-grow: 1;
   }
   .all-app-list{
     margin: 0 auto;
-    margin-top: 100px;
+    margin-top: 750px;
     grid-row-gap: 35px;
     width: 60%;
     height:450px;
+    transition: margin-top 0.25s ease;
+    &.open-app-list{
+      margin-top: 100px;
+    }
+
 
   }
   .app-container{
@@ -155,12 +176,6 @@ flex-grow: 1;
   margin: 10px;
   margin-top: 27px;
   position: relative;
-  .desktop-container{
-    transform: scale(0.1979, 0.1856);
-    position: fixed;
-    top: -294px;
-    left: -165px;
-  }
 }
 
 .ethernet-menu{

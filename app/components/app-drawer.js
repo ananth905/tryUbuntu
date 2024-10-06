@@ -63,7 +63,17 @@ export default class AppDrawerComponent extends Component {
   };
    
   @action
+  openAppList(element){
+    // element.classList.add('open-app-list')
+    setTimeout(() => {
+      element.classList.add('open-app-list');
+      document.querySelector('.desktop-workspace').classList.add('scale-workspace')
+    }, 0)
+
+  }
+  @action
   openApp(key){
+    document.querySelector('.desktop-workspace').classList.remove('scale-workspace')
     if(!this.desktopservice.taskBarIcons[key]){
       set(this.desktopservice.taskBarIcons,key , this.allList[key])
       set(this.desktopservice,"currentOpenedAppId" , key);
@@ -74,7 +84,6 @@ export default class AppDrawerComponent extends Component {
   
   @action
   insertDesktopImg(element){
-    console.log("element",element)
-    element.appendChild(this.args.dekstopScreenShot);
+
   }
 }

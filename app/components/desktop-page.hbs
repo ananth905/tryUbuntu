@@ -1,7 +1,5 @@
 <div class="desktop-container flex" >
-    <div class="wallpaper" >
-
-    </div>
+ 
     <div class="taksbar">
         <div>
           <div class="applist">
@@ -32,12 +30,19 @@
         <img src="/icons/powerbtn.png" class="powerbtn"/>
       </div>
     </div>
-
-   {{#if (and this.desktopservice.currentApp.appName this.dekstopScreenShot)}}
-    {{component this.desktopservice.currentApp.appName dekstopScreenShot = this.dekstopScreenShot}}
+ 
+   {{#if (eq this.desktopservice.currentApp.appName "app-drawer")}}
+     {{component this.desktopservice.currentApp.appName }}
     {{!-- <InstalledApps::Ephiny::Web/> --}}
     {{!-- <SoftwareStore::SoftwareStore/> --}}
-   {{/if }}
+    {{/if }} 
+    <div class="desktop-workspace">
+         <div class="wallpaper" ></div>
+      {{#if (and this.desktopservice.currentApp.appName (not (eq this.desktopservice.currentApp.appName "app-drawer")))}}
+          {{component this.desktopservice.currentApp.appName }}
+      {{/if}}   
+     </div>
+  
 
 
 
