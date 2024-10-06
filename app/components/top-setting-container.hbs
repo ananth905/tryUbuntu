@@ -1,38 +1,56 @@
  <div class="top-setting-container absolute">
-
+  <div class="rounded-tiles flex w-full justify-between">
+    <div class="rounded-tile battery">
+      <img width="14" height="14" class="top-line-icon" src="https://img.icons8.com/ios-filled/100/battery-.png" alt="battery-"/>
+       <span>96%</span>
+    </div>
+    <div class="flex">
+        <div class="rounded-tile">
+          <img class="top-line-icon" src="https://img.icons8.com/ios/100/take-screenshot.png" alt="take-screenshot"/>
+        </div>
+        <div class="rounded-tile">
+          <img class="top-line-icon" src="https://img.icons8.com/fluency-systems-regular/50/settings--v1.png" alt="settings--v1"/>
+        </div>
+        <div class="rounded-tile">
+          <img class="top-line-icon" src="https://img.icons8.com/ios/100/lock--v1.png" alt="lock--v1"/>
+        </div>
+        <div class="rounded-tile">
+          <img class="top-line-icon" src="https://img.icons8.com/forma-thin/96/shutdown.png" alt="shutdown"/>
+        </div>
+    </div>
+  </div>
    <div class="valume-input flex items-center  justify-center">
-    <div class="flex settingoption items-center justify-center">
+    <div class="flex top-settingoption  w-full items-center justify-center">
        <img src="/icons/volume.png" alt="">
        <input type="range" name="" id="" {{action this.setVolume}}>
      </div>
    </div>
+   <div class="valume-input flex items-center  justify-center">
+    <div class="flex top-settingoption  w-full items-center justify-center">
+       <img width="12" height="12" src="https://img.icons8.com/external-creatype-glyph-colourcreatype/64/external-brightness-essential-ui-v1-creatype-glyph-colourcreatype.png" />
+       <input type="range" name="" id="" {{action this.setVolume}}>
+     </div>
+   </div>
+   <div class="settings-shortcut justify-center flex flex-wrap">
    {{#each this.itemBeforeDivder as |item index |}}
-   <div class="flex flex-col settingoption items-center justify-center mt-1" onclick={{action this.toggleSubcatList}}>
+   <div class={{concat "flex flex-col settingoption items-center justify-center mt-1" (if item.open " turn-on-option")}} onclick={{action this.toggleSubcatList}}>
      <div class="flex items-center setting-opt-name justify-between"  >
       <div class="flex items-center ">
          <img src={{item.src}} alt=""/>
          <div class="settingoption-name ">{{item.name}}</div>
       </div>
-      {{#if item.subCat}}
-        <img class="accordianicon" src="/icons/iconright.png"/>
-      {{/if}}
-     </div>
-     <div class="subcatlist h-0 overflow-hidden flex flex-col w-full">
+     </div> 
+  </div>
+   {{/each}}
+   </div>
+   
+ </div>
+{{yield}}
+
+     {{!-- <div class="subcatlist h-0 overflow-hidden flex flex-col w-full"></div>
       {{#if item.subCat.length}}
        {{#each item.subCat as |subItem index|}}
          <div class="subcatItem h-[30px] mx-auto leading-[30px]">{{subItem}}</div>
        {{/each}}
       {{/if}}
-     </div>
-    
-
-
-
-   </div>
-   {{#if (eq index 2)}}
-    <div class="border-t-2 border-gray-300 m-1 mx-auto w-[90%]"></div>
-   {{/if}}
-   {{/each}}
-   
- </div>
-{{yield}}
+     </div> --}}

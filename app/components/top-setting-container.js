@@ -8,31 +8,31 @@ export default class TopSettingContainerComponent extends Component {
   itemBeforeDivder = [
     {
       src: '/icons/ether.png',
-      name: 'Wired Connected',
-      subCat: ['Turn Off', 'Wired Setting'],
+      name: 'Wi-Fi',
+      description:"ACT Fibernet",
+      open:true
     },
     {
       src: '/icons/battery.png',
-      name: 'Remaining(30 %)',
-      subCat: ['Power Setting'],
+      name: 'Bluetooth',
+      open:true
     },
     {
       src: '/icons/speedomeeter.png',
-      name: 'Balanced',
-      subCat: ['Balanced', 'Power Saver'],
+      name: 'PowerMode',
+      description: 'Balanced',
     },
     {
       src: '/icons/setting.png',
-      name: 'Settings',
+      name: 'Night Light',
     },
     {
       src: '/icons/lock.png',
-      name: 'Lock',
+      name: 'Dark Style',
     },
     {
       src: '/icons/power.png',
-      name: 'Poweroff / logout',
-      subCat: ['Suspend', 'Restart', 'Power off'],
+      name: 'Airplane Mode',
     },
   ];
 
