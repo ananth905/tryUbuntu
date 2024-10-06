@@ -1,4 +1,4 @@
- <div class="top-setting-container absolute">
+ <div class="top-setting-container absolute" {{on-click-outside this.args.toggleProperty}}>
   <div class="rounded-tiles flex w-full justify-between">
     <div class="rounded-tile battery">
       <img width="14" height="14" class="top-line-icon" src="https://img.icons8.com/ios-filled/100/battery-.png" alt="battery-"/>
@@ -21,13 +21,13 @@
   </div>
    <div class="valume-input flex items-center  justify-center">
     <div class="flex top-settingoption  w-full items-center justify-center">
-       <img src="/icons/volume.png" alt="">
-       <input type="range" name="" id="" {{action this.setVolume}}>
+       <img class="top-settings-icon" src="/icons/volume.png" alt="">
+       <input type="range" class="top-settings-icon" name="" id="" {{action this.setVolume}}>
      </div>
    </div>
    <div class="valume-input flex items-center  justify-center">
     <div class="flex top-settingoption  w-full items-center justify-center">
-       <img width="12" height="12" src="https://img.icons8.com/external-creatype-glyph-colourcreatype/64/external-brightness-essential-ui-v1-creatype-glyph-colourcreatype.png" />
+       <img  class="top-settings-icon" src="https://img.icons8.com/external-creatype-glyph-colourcreatype/64/external-brightness-essential-ui-v1-creatype-glyph-colourcreatype.png" />
        <input type="range" name="" id="" {{action this.setVolume}}>
      </div>
    </div>
@@ -36,7 +36,7 @@
    <div class={{concat "flex flex-col settingoption items-center justify-center mt-1" (if item.open " turn-on-option")}} onclick={{action this.toggleSubcatList}}>
      <div class="flex items-center setting-opt-name justify-between"  >
       <div class="flex items-center ">
-         <img src={{item.src}} alt=""/>
+         <img src={{item.src}} alt="" class="top-settings-icon mr-3"/>
          <div class="settingoption-name ">{{item.name}}</div>
       </div>
      </div> 

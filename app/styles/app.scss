@@ -113,12 +113,16 @@ body {
 
     .shortcut {
       margin-right: 4px;
-
-      img {
-        margin-right: 6px;
-        width: 12px;
-        height: 12px;
+      padding: 3px 8px;
+      border-radius: 12px;
+      &.shortcut-opened{
+        background: #454545;
       }
+      // img {
+      //   margin-right: 6px;
+      //   width: 12px;
+      //   height: 12px;
+      // }
 
       .top-line-icon{
         width: 18px;
@@ -170,7 +174,7 @@ body {
   .all-app-list {
     margin: 0 auto;
     margin-top: 750px;
-    grid-row-gap: 35px;
+    // grid-row-gap: 35px;
     width: 62%;
     height: 565px;
     transition: margin-top 0.25s ease;
@@ -245,7 +249,10 @@ body {
 
 
 // top-setting-container -start 
-
+.top-settings-icon{
+  width: 14px;
+  height: 14px;
+}
 .top-setting-container {
   color: #232323;
 

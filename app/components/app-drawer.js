@@ -60,6 +60,11 @@ export default class AppDrawerComponent extends Component {
       name: 'Web',
       componentPath:"installed-apps/ephiny/web"
     },
+    19: {
+      link: '/icons/system-settings.png',
+      name: 'Settings',
+      componentPath:"settings/settings-container"
+    },
   };
    
   @action
