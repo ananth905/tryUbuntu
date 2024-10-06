@@ -4,164 +4,196 @@
 @import "settings";
 @import "ember-power-select";
 @import 'appstore';
-body{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: 'Ubuntu';
-    overflow: hidden;
+
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Ubuntu';
+  overflow: hidden;
 }
-.wh18{
+
+.wh18 {
   width: 18px;
   height: 18px;
 }
-.desktop-container{
-    height: 100vh;
-    width: 100vw;
-    position: relative;
-     .wallpaper{
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-        background-size: cover;
-        z-index: -2;
-     }
-     .taksbar{
-        height: 100%;
-        width: 60px;
-        background: rgb(20 16 18);
-        padding-top: 25px;
-        position: absolute;
-        left: 0;
-        >div{
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-            height: 100%;
-            width: 100%;
-        }
-        .taskbaricon{
-            margin-bottom: 15px;
-            padding: 7px 8px;
-            border-radius: 12px;
-            position: relative;
-            &.current-opened-app{
-              background: rgb(191 191 191 / 27%);
-            }
-            &.opened-app::after{
-              position: absolute;
-              left: 2px;
-              top: 50%;
-              content: "";
-              transform: translateY(-50%);
-              height: 5px;
-              width: 5px;
-              background: #e95420;
-              border-radius: 5px;
-            }
-        }
-        .taskbaricon,.startbtn{
-            img{
-              width: 40px;
-              height: 40px;
-            }
-            i{
-              font-size: 32px;
-              margin-bottom: 18px;
-            }
-        }
-     }
 
-     .topbar{
-        color: white;
+.desktop-container {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+
+  .wallpaper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-size: cover;
+    z-index: -2;
+  }
+
+  .taksbar {
+    height: 100%;
+    width: 60px;
+    background: rgb(20 16 18);
+    padding-top: 25px;
+    position: absolute;
+    left: 0;
+
+    >div {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+    }
+
+    .taskbaricon {
+      margin-bottom: 15px;
+      padding: 7px 8px;
+      border-radius: 12px;
+      position: relative;
+
+      &.current-opened-app {
+        background: rgb(191 191 191 / 27%);
+      }
+
+      &.opened-app::after {
         position: absolute;
-        z-index: 1;
-        top: 0;
-        height: 32px;
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background-color:#131313;
-      .displaytime{
-        font-size: 12px;
-      } 
-      .shortcut{
-        margin-right: 4px;
-        img{
-           margin-right: 6px;
-           width: 12px;
-           height: 12px;
-        }
+        left: 2px;
+        top: 50%;
+        content: "";
+        transform: translateY(-50%);
+        height: 5px;
+        width: 5px;
+        background: #e95420;
+        border-radius: 5px;
       }
     }
 
-    .desktop-workspace{
-      height: calc(100% - 20px);
-      width: calc(100% - 60px);
-      top: 20px;
-      transform: scale(1,1);
-      transition: transform ease 0.25s;
-      position: absolute;
-      left: 60px;
-
-      &.scale-workspace{
-        transform: scale(0.1979, 0.1856);
-        // position: fixed;
-        top: -250px;
-        left: -162px;
+    .startbtn {
+      width: 87%;
+     
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 0;
+      border-radius: 10px;
+      &.start-opened{
+        background: #363636;
       }
     }
+
+    .taskbaricon,
+    .startbtn {
+      i{
+        font-size: 30px;
+      }
+    }
+  }
+
+  .topbar {
+    color: white;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    height: 32px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #131313;
+
+    .displaytime {
+      font-size: 12px;
+    }
+
+    .shortcut {
+      margin-right: 4px;
+
+      img {
+        margin-right: 6px;
+        width: 12px;
+        height: 12px;
+      }
+    }
+  }
+
+  .desktop-workspace {
+    height: calc(100% - 20px);
+    width: calc(100% - 60px);
+    top: 20px;
+    transform: scale(1, 1);
+    transition: transform ease 0.25s;
+    position: absolute;
+    left: 60px;
+
+    &.scale-workspace {
+      transform: scale(0.1979, 0.1856);
+      // position: fixed;
+      top: -250px;
+      left: -162px;
+    }
+  }
 }
 
 
-.app-drawer{
+.app-drawer {
   height: calc(100% - 20px);
   flex-grow: 1;
   background: rgba(0, 0, 0, 0.91);
   margin-top: 20px;
-  .searchbox{
-    margin-top: 20px;
-    width: 250px;
-    height: 32px;
+
+  .searchbox {
+    margin-top: 46px;
+    width: 390px;
+    height: 40px;
     border-radius: 30px;
-    background: white;
+    background: #5f5f5f69;
     color: #2f2f2f;
     font-weight: 500;
+    color: #a6a6a6;
+    backdrop-filter: blur(80px);
   }
-  .all-app-list{
+
+  .all-app-list {
     margin: 0 auto;
     margin-top: 750px;
     grid-row-gap: 35px;
     width: 60%;
-    height:450px;
+    height: 450px;
     transition: margin-top 0.25s ease;
-    &.open-app-list{
-      margin-top: 100px;
+
+    &.open-app-list {
+      margin-top: 46px;
     }
 
 
   }
-  .app-container{
+
+  .app-container {
     color: #dfdfdf;
     width: 160px;
     height: 160px;
-    .app-icon{
+
+    .app-icon {
       width: 70px;
       height: 70px;
     }
-    .app-name{
+
+    .app-name {
       margin-top: 2px;
       overflow: hidden;
       text-overflow: ellipsis;
       text-wrap: nowrap;
-      width: 160px;
+      width: 130px;
+      
     }
-    &:hover{
+
+    &:hover {
       background: #93939346;
       backdrop-filter: blur(50px);
       border-radius: 8px;
@@ -170,7 +202,7 @@ body{
 
 }
 
-.desktop-pane{
+.desktop-pane {
   height: 180px;
   width: 370px;
   margin: 10px;
@@ -178,13 +210,13 @@ body{
   position: relative;
 }
 
-.ethernet-menu{
-  .top-setting-container{
+.ethernet-menu {
+  .top-setting-container {
     width: 280px;
     bottom: -287px;
     min-height: 270px;
     left: -260px;
-    z-index: 1 ;
+    z-index: 1;
     background: #e4e4e4;
     border-radius: 8px;
   }
@@ -194,19 +226,22 @@ body{
 
 // top-setting-container -start 
 
-.top-setting-container{
+.top-setting-container {
   color: #232323;
+
   input[type=range] {
     -webkit-appearance: none;
- }
- input[type=range]::-webkit-slider-runnable-track {
+  }
+
+  input[type=range]::-webkit-slider-runnable-track {
     width: 80%;
     height: 3px;
     background: #92908f;
     border: none;
     border-radius: 3px;
- }
- input[type=range]::-webkit-slider-thumb {
+  }
+
+  input[type=range]::-webkit-slider-thumb {
     -webkit-appearance: none;
     border: none;
     height: 12px;
@@ -215,150 +250,170 @@ body{
     background: rgb(254, 254, 254);
     margin-top: -4px;
     border: 1px solid rgba(0, 0, 0, 0.605);
- }
- input[type=range]:focus {
+  }
+
+  input[type=range]:focus {
     outline: none;
- }
-//   input[type=range]:focus::-webkit-slider-runnable-track {
-//     background: #ccc;
-//  }
- input[type=range] {
+  }
+
+  //   input[type=range]:focus::-webkit-slider-runnable-track {
+  //     background: #ccc;
+  //  }
+  input[type=range] {
     /* fix for FF unable to apply focus style bug  */
     // border: 1px solid white;
     /*required for proper track sizing in FF*/
     background: transparent;
     width: 80%;
- }
+  }
+
   input[type=range]::-moz-range-track {
     width: 80%;
     height: 5px;
     background: #ddd;
     border: none;
     border-radius: 3px;
- }
+  }
+
   input[type=range]::-moz-range-thumb {
     border: none;
     height: 16px;
     width: 16px;
     border-radius: 50%;
     background: goldenrod;
- }
- 
- /*hide the outline behind the border*/
- input[type=range]:-moz-focusring {
+  }
+
+  /*hide the outline behind the border*/
+  input[type=range]:-moz-focusring {
     outline: 1px solid white;
     outline-offset: -1px;
- }
+  }
+
   input[type=range]:focus::-moz-range-track {
     background: #ccc;
- }
- 
- /* for ie */
- 
- input[type=range]::-ms-track {
+  }
+
+  /* for ie */
+
+  input[type=range]::-ms-track {
     width: 80%;
     height: 5px;
- 
- /*remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
+
+    /*remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
     background: transparent;
- 
- /*leave room for the larger thumb to overflow with a transparent border */
+
+    /*leave room for the larger thumb to overflow with a transparent border */
     border-color: transparent;
     border-width: 6px 0;
- 
- /*remove default tick marks*/
+
+    /*remove default tick marks*/
     color: transparent;
- }
- input[type=range]::-ms-fill-lower {
+  }
+
+  input[type=range]::-ms-fill-lower {
     background: #777;
     border-radius: 10px;
- }
- input[type=range]::-ms-fill-upper {
+  }
+
+  input[type=range]::-ms-fill-upper {
     background: #ddd;
     border-radius: 10px;
- }
- input[type=range]::-ms-thumb {
+  }
+
+  input[type=range]::-ms-thumb {
     border: none;
     height: 16px;
     width: 16px;
     border-radius: 50%;
     background: goldenrod;
- }
- input[type=range]:focus::-ms-fill-lower {
-    background: #888;
- }
- input[type=range]:focus::-ms-fill-upper {
-    background: #ccc;
- }
- .valume-input{
-  // width: 100%;
-  height: 48px;
-  border-bottom: 1px solid #92908f9a;
-
-
-}
-.settingoption{
-  font-size: 12px;
-  width: 100%;
-  min-height: 30px;
-
-  .setting-opt-name,.subcatItem{
-    width: 95%;
-    height: 30px;
-    border-radius: 5px;
-    padding-left: 10px;
-    &:hover{
-      background: #92908f4b;
-    }
   }
 
-}
+  input[type=range]:focus::-ms-fill-lower {
+    background: #888;
+  }
+
+  input[type=range]:focus::-ms-fill-upper {
+    background: #ccc;
+  }
+
+  .valume-input {
+    // width: 100%;
+    height: 48px;
+    border-bottom: 1px solid #92908f9a;
+
+
+  }
+
+  .settingoption {
+    font-size: 12px;
+    width: 100%;
+    min-height: 30px;
+
+    .setting-opt-name,
+    .subcatItem {
+      width: 95%;
+      height: 30px;
+      border-radius: 5px;
+      padding-left: 10px;
+
+      &:hover {
+        background: #92908f4b;
+      }
+    }
+
+  }
 }
 
 
 
 ///settings-container-----
 /// 
-.lhs-section-bg{
-  background:#f2f2f2;
-  border-right:  1px solid #ababab95;
+.lhs-section-bg {
+  background: #f2f2f2;
+  border-right: 1px solid #ababab95;
 }
-.settings-container{
+
+.settings-container {
   font-weight: 600;
-  .settings-section{
+
+  .settings-section {
     min-width: 980px;
     font-size: 12px;
     // background: #960f0f;
     border: 1px solid #ababab95;
-    .lhs-section{
+
+    .lhs-section {
       width: 234px;
-     
+
       padding: 7px;
-      
-      .settings-lhs-options{
+
+      .settings-lhs-options {
         padding-top: 10px;
       }
-      .setting-option-icon{
+
+      .setting-option-icon {
         width: 18px;
         height: 18px;
         margin-right: 12px;
       }
 
-      .setting-option{
+      .setting-option {
         font-weight: lighter;
         width: 100%;
         margin: 5px 0;
         border-radius: 5px;
-        padding: 5px 2px; 
+        padding: 5px 2px;
         height: 37px;
         padding: 14px;
         cursor: default;
-        &:hover, &.selected-setting {
+
+        &:hover,
+        &.selected-setting {
           background: rgb(19 19 19 / 10%);
         }
       }
 
-      .setting-option-divider{
+      .setting-option-divider {
         width: 99%;
         height: 1px;
         background: #4d4c4c3d;
@@ -369,27 +424,32 @@ body{
 
 
     }
-    .app-center-lhs{
+
+    .app-center-lhs {
       width: 206px;
     }
-    .rhs-section{
+
+    .rhs-section {
       background: #fafafa;
     }
-    .setting-header-icon{
+
+    .setting-header-icon {
       // background: #f8f8f8;
       // border: 1px solid #ababab95;
-      
+
       padding: 6.5px;
-      &:hover{
+
+      &:hover {
         background: #ABABAB;
       }
     }
   }
 }
 
-.ubuntu-power-trigger{
+.ubuntu-power-trigger {
   border: none !important;
-  .tick-image{
+
+  .tick-image {
     display: none !important;
   }
 }
@@ -402,7 +462,8 @@ body{
   box-shadow: 0px 0px 12px 1px rgb(24 24 24 / 20%);
   padding: 7px;
   border-radius: 8px !important;
-  &::after{
+
+  &::after {
     position: absolute;
     content: "";
     /* width: 14px; */
@@ -417,27 +478,33 @@ body{
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
   }
+
   .ember-power-select-option {
     cursor: pointer;
     padding: 3px 10px;
     border-radius: 5px;
     font-weight: lighter;
     font-size: 14px;
-}
-.ember-power-select-option[aria-current=true],.ember-power-select-option[aria-selected=true]:hover {
-  background: #72747724 ;
-  color: inherit;
-}
-.ember-power-select-option[aria-selected=true] {
-  background-color: transparent;
-  display: flex;
-  align-items: center;
-  img{
-    width: 14px;
-    height: 14px;
   }
-}
- .ember-power-select-trigger:focus{
-  border: none !important;
- }
+
+  .ember-power-select-option[aria-current=true],
+  .ember-power-select-option[aria-selected=true]:hover {
+    background: #72747724;
+    color: inherit;
+  }
+
+  .ember-power-select-option[aria-selected=true] {
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 14px;
+      height: 14px;
+    }
+  }
+
+  .ember-power-select-trigger:focus {
+    border: none !important;
+  }
 }

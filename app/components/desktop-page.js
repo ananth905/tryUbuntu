@@ -30,6 +30,7 @@ export default class DesktopPageComponent extends Component {
   async openAppDrawer()
   {
       this.setCurrentApp('app-drawer' ,true ,1)
+      document.querySelector(".startbtn").classList.add("start-opened")
       // Set the source of an image element to the data URL
   }
 
@@ -37,7 +38,8 @@ export default class DesktopPageComponent extends Component {
   async setCurrentApp(appName, toggle , appId) {
     if (this.desktopservice.currentApp?.appName == 'app-drawer' && toggle){
       set(this.desktopservice, 'currentApp', {});
-      document.querySelector('.desktop-workspace').classList.remove('scale-workspace')
+      document.querySelector('.desktop-workspace').classList.remove('scale-workspace');
+      document.querySelector(".startbtn").classList.remove(".start-opened")
     }
     else {
 
