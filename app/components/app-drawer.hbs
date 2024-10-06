@@ -11,9 +11,11 @@
 
     <div class="all-app-list grid justify-center items-center grid-cols-6 grid-rows-3" {{did-insert this.openAppList}}>
         {{#each-in this.allList as | index app|}}
-        <div class="app-container flex items-center flex-col justify-center" onclick={{fn this.openApp index}}>
-            <img class="app-icon" src={{app.link}}/>
-            <div class="app-name whitespace-nowrap text-center">{{app.name}}</div>
+        <div class="app-container flex items-center flex-col " onclick={{fn this.openApp index}}>
+            <div class="app-icon-wrap flex items-center flex-col">
+                <img class="app-icon" src={{app.link}}/>
+                <div class="app-name whitespace-nowrap text-center">{{app.name}}</div>
+            </div>
         </div>
         
         {{/each-in}}

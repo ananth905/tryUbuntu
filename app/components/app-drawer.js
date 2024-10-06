@@ -8,7 +8,7 @@ export default class AppDrawerComponent extends Component {
 
   allList = {
     6: {
-      link: '/icons/multimedia-video-player.svg',
+      link: '/icons/mediaplayer-app.png',
       name: 'video',
     },
     7: {
@@ -16,7 +16,7 @@ export default class AppDrawerComponent extends Component {
       name: 'Calculator',
     },
     8: {
-      link: '/icons/doc.png',
+      link: '/icons/writer.png',
       name: 'Document',
     },
     9: {
@@ -24,7 +24,7 @@ export default class AppDrawerComponent extends Component {
       name: 'Cheese',
     },
     10: {
-      link: '/icons/cpu.png',
+      link: '/icons/jockey.png',
       name: 'Additional Drivers',
     },
     11: {
@@ -40,7 +40,7 @@ export default class AppDrawerComponent extends Component {
       name: 'Language',
     },
     14: {
-      link: '/icons/google-docs.png',
+      link: '/icons/writer.png',
       name: 'LibereOffice Writer',
     },
     15: {

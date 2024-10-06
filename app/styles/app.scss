@@ -163,8 +163,8 @@ body {
     margin: 0 auto;
     margin-top: 750px;
     grid-row-gap: 35px;
-    width: 60%;
-    height: 450px;
+    width: 62%;
+    height: 565px;
     transition: margin-top 0.25s ease;
 
     &.open-app-list {
@@ -176,12 +176,17 @@ body {
 
   .app-container {
     color: #dfdfdf;
-    width: 160px;
-    height: 160px;
+    // width: 160px;
+    height: 165px;
+    &:hover{
+      .app-name{
+         text-wrap: wrap;
+      }
+    }
 
     .app-icon {
-      width: 70px;
-      height: 70px;
+      width: 90px;
+      height: 90px;
     }
 
     .app-name {
@@ -189,15 +194,21 @@ body {
       overflow: hidden;
       text-overflow: ellipsis;
       text-wrap: nowrap;
-      width: 130px;
-      
+      width: 125px;
+      max-height: 45px;
+      transition: height 0.15s ease;
+
     }
 
-    &:hover {
-      background: #93939346;
+    .app-icon-wrap{
+      padding: 16px 5px;
+      width: 152px;
+      &:hover {
+      background: rgb(112 112 112 / 23%);
       backdrop-filter: blur(50px);
       border-radius: 8px;
     }
+   }
   }
 
 }

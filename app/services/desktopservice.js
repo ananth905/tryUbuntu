@@ -15,10 +15,10 @@ export default class DesktopserviceService extends Service {
       link: '/icons/thunder.png',
     },
     3: {
-      link: '/icons/Rhythmbox-icon-new.png',
+      link: '/icons/folder.png',
     },
     4: {
-      link: '/icons/lboffice.png',
+      link: '/icons/writer.png',
     },
     5: {
       link: '/icons/app-store.png',
