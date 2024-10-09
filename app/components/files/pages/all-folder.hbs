@@ -1,0 +1,19 @@
+
+    {{#if this.currentFolderList}}    
+     {{#each-in this.currentFolderList as |name folder|}}
+      <div class="folder-container">
+         <div class="folder-icon">
+            <img src={{folder.link}} alt="">
+         </div>
+         <div class="folder-name">{{name}}</div>
+      </div>
+     {{/each-in}}
+   
+   {{else}}
+    <div class="empty-folder  h-full w-full flex justify-center items-center flex-col">
+       <img width="144" height="144" src="https://img.icons8.com/fluency-systems-regular/144/folder-invoices--v1.png" alt="folder-invoices--v1" class="emty-folder-icon opacity-30"/>
+        <span>Folder is Empty</span>
+    </div>
+   {{/if}}
+
+{{yield}}

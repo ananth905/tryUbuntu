@@ -16,6 +16,7 @@ export default class DesktopserviceService extends Service {
     },
     3: {
       link: '/icons/folder.png',
+      component:'files/files-container'
     },
     4: {
       link: '/icons/writer.png',

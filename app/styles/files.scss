@@ -1,0 +1,22 @@
+.folder-container{
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     margin: 7px;
+     width: 100px;
+     height: 100px;
+     padding: 10px;
+     border-radius: 8px;
+    .folder-icon{
+        width: 55px;
+        height: 55px;
+    }
+    .folder-name{
+        margin-top: 5px;
+        font-size: 14px;
+        font-weight: lighter;
+    }
+    &:hover{
+        background: rgba(121, 121, 121, 0.1);
+    }
+}
