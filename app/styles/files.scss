@@ -26,3 +26,22 @@
         background: #f9d4c7;
     }
 }
+.folder-pwd{
+    width: 70%;
+    background: rgb(65 65 65 / 10%);
+    height: 72%;
+    /* margin: 10px 0; */
+    border-radius: 6px;
+    padding: 0 15px;
+    max-width: 830px;
+    display: flex;
+    align-items: center;
+}
+.file-rhs-heading{
+    height: 2.75rem;
+}
+.pwd-icon{
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+}
