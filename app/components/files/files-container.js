@@ -65,29 +65,35 @@ export default class SettingsContainer extends Component {
         return this[this.currentScreen.name]
       }
     Home={
-              
-               Desktop:{
-                 link:"/filemanager/user-desktop.png"
-               },
-               Documents:{
-                   link:"/filemanager/folder-documents.png"
-               },
-               Download:{
-                   link:"/filemanager/folder-download.png"
-               },
-               Music:{
-                   link:"/filemanager/folder-music.png"
-               },
-               Pictures:{
-                   link:"/filemanager/folder-pictures.png",
-               },
-               Public:{
-                    link:"/filemanager/folder-publicshare.png"
-               },
-               Videos:{
-                   link:"/filemanager/folder-videos.png"
-               }
-           }
+        Desktop: {
+            link: "/filemanager/user-desktop.png",
+            id: 101
+        },
+        Documents: {
+            link: "/filemanager/folder-documents.png",
+            id: 102
+        },
+        Download: {
+            link: "/filemanager/folder-download.png",
+            id: 103
+        },
+        Music: {
+            link: "/filemanager/folder-music.png",
+            id: 104
+        },
+        Pictures: {
+            link: "/filemanager/folder-pictures.png",
+            id: 105
+        },
+        Public: {
+            link: "/filemanager/folder-publicshare.png",
+            id: 106
+        },
+        Videos: {
+            link: "/filemanager/folder-videos.png",
+            id: 107
+        }
+    };
     
 
     constructor(){

@@ -1,7 +1,7 @@
 
     {{#if this.currentFolderList}}    
      {{#each-in this.currentFolderList as |name folder|}}
-      <div class="folder-container">
+      <div class={{concat "folder-container" (if (eq this.clickedFolder.id folder.id) " clicked-level")}} onclick={{action this.setCurrentFolder folder}}>
          <div class="folder-icon">
             <img src={{folder.link}} alt="">
          </div>
