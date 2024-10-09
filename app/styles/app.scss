@@ -137,7 +137,7 @@ body {
   .desktop-workspace {
     height: calc(100% - 20px);
     width: calc(100% - 60px);
-    top: 20px;
+    top: 30px;
     transform: scale(1, 1);
     transition: transform ease 0.25s;
     position: absolute;
@@ -463,7 +463,7 @@ body {
 
 .settings-container {
   font-weight: 600;
-
+  height: calc(100vh - 25px);
   .settings-section {
     min-width: 980px;
     font-size: 12px;

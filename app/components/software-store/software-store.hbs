@@ -1,4 +1,4 @@
-<div class="settings-container mt-5 h-full">
+<div class="settings-container  h-full">
     <div class="settings-section rounded-md flex h-full">
         <div class="lhs-section lhs-section-bg app-center-lhs">
             <div class="search-icon text-center mb-3 mt-2">
@@ -23,7 +23,9 @@
             <WindowControl/>
           </div> 
            <div class="rhs-section-content">
+            {{#if this.currentScreen.component}}
              {{component (concat "software-store/pages/" this.currentScreen.component)}}
+            {{/if}}
            </div>   
         </div>
     </div>
