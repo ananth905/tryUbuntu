@@ -38,9 +38,10 @@
     {{/if }} 
     <div class="desktop-workspace">
          <div class="wallpaper" ></div>
-      {{#if (and this.desktopservice.currentApp.appName (not (eq this.desktopservice.currentApp.appName "app-drawer")))}}
+      {{!-- {{#if (and this.desktopservice.currentApp.appName (not (eq this.desktopservice.currentApp.appName "app-drawer")))}}
           {{component this.desktopservice.currentApp.appName }}
-      {{/if}}   
+      {{/if}}    --}}
+      <Files::FilesContainer/>
      </div>
   
 

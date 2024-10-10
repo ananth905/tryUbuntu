@@ -34,17 +34,19 @@
                     <img src="https://img.icons8.com/ios/100/forward--v1.png" alt="forward--v1" />
                 </div>
             </div>
-            <div class="current-setting-menu folder-pwd">
-                <img class="pwd-icon" src={{this.currentScreen.icon}}/> {{this.currentScreen.name}}
-            </div>
+            <div class="pwd-bar">
+              <div class="current-setting-menu folder-pwd">
+                <img class="pwd-icon" src={{this.currentScreen.icon}}/> {{this.pwd}}
+              </div>
+              <img class="folder-search" title="Search Current Folder" src="https://img.icons8.com/sf-ultralight/100/search-folder.png" alt="search-folder"/>
+           </div>
             <WindowControl />
         </div>
         <div class="rhs-section-content h-full w-full">
             <div class="wifi-tab-container settings-tab-page  h-full w-full">
                 <div class={{concat "px-4 pt-11 flex flex-wrap items-center " ( unless
                     this.currentFolderList "h-full w-full" )}}>
-
-                    <Files::Pages::AllFolder @currentFolderList={{this.currentFolderList}} />
+                    <Files::Pages::AllFolder @currentFolderList={{this.currentFolderList.subFolder}} @changeDirectory={{action this.changeDirectory}}/>
                 </div>
             </div>
         </div>

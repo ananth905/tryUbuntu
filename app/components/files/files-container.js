@@ -5,6 +5,10 @@ import { action } from '@ember/object';
 export default class SettingsContainer extends Component {
 
     @tracked currentScreen;
+    @tracked currentFolderList;
+
+    @tracked pwd;
+
      settingsOption = [
         {
             id: 0,
@@ -61,48 +65,87 @@ export default class SettingsContainer extends Component {
         }
     ];
     
-    get currentFolderList(){
+    get (){
         return this[this.currentScreen.name]
       }
     Home={
+       id: 2,
+       name: "Home",
+       icon: "https://img.icons8.com/forma-thin/96/exterior.png",
+       subFolder:{
         Desktop: {
-            link: "/filemanager/user-desktop.png",
-            id: 101
+            icon: "/filemanager/user-desktop.png",
+            id: 101,
+            name:"Dektop"
         },
         Documents: {
-            link: "/filemanager/folder-documents.png",
-            id: 102
+            icon: "/filemanager/folder-documents.png",
+            id: 102,
+            name:"Documents"
         },
         Download: {
-            link: "/filemanager/folder-download.png",
-            id: 103
+            icon: "/filemanager/folder-download.png",
+            id: 103,
+            name:"Download",
+            subFolder:{
+                FaceBook:{
+                    icon:"/filetypes/application-apk.png",
+                    id:103.1,
+                    name:"FaceBook"
+                },
+                Profile:{
+                    icon:"/filetypes/application-pdf.png",
+                    id:103.2,
+                    name:"sample Pdf"
+                },
+                Application:{
+                    icon:"/filetypes/application-json.png",
+                    id:103.2,
+                    name:"Application"
+                }
+
+            }
         },
         Music: {
-            link: "/filemanager/folder-music.png",
-            id: 104
+            icon: "/filemanager/folder-music.png",
+            id: 104,
+            name:"Music"
         },
         Pictures: {
-            link: "/filemanager/folder-pictures.png",
-            id: 105
+            icon: "/filemanager/folder-pictures.png",
+            id: 105,
+            name:"Picture"
         },
         Public: {
-            link: "/filemanager/folder-publicshare.png",
-            id: 106
+            icon: "/filemanager/folder-publicshare.png",
+            id: 106,
+            name:"Public"
         },
         Videos: {
-            link: "/filemanager/folder-videos.png",
-            id: 107
+            icon: "/filemanager/folder-videos.png",
+            id: 107,
+            name:"Videos"
         }
+     }
     };
     
 
     constructor(){
       super(...arguments);
-      this.currentScreen= this.settingsOption[0]
+      this.currentScreen= this.settingsOption[2]
+      this.currentFolderList=this[this.currentScreen.name]
+      this.pwd = this.currentScreen.name;
     }
 
     @action
     setCurrentScreen(index){
         this.currentScreen = this.settingsOption[index]
+    }
+
+    @action
+    changeDirectory(Folder,key){
+        this.currentFolderList = Folder;
+        this.pwd = `${this.pwd}  /  ${key}`
+
     }
 }

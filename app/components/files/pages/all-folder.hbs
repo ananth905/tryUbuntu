@@ -1,11 +1,11 @@
 
     {{#if this.currentFolderList}}    
      {{#each-in this.currentFolderList as |name folder|}}
-      <div class={{concat "folder-container" (if (eq this.clickedFolder.id folder.id) " clicked-level")}} onclick={{action this.setCurrentFolder folder}}>
+      <div class={{concat "folder-container" (if (eq this.clickedFolder.id folder.id) " clicked-level")}} onclick={{action this.setCurrentFolder folder}} ondblclick={{action @changeDirectory folder name}}>
          <div class="folder-icon">
-            <img src={{folder.link}} alt="">
+            <img src={{folder.icon}} alt="">
          </div>
-         <div class="folder-name">{{name}}</div>
+         <div class="folder-name">{{folder.name}}</div>
       </div>
      {{/each-in}}
    
