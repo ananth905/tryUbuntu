@@ -148,4 +148,14 @@ export default class SettingsContainer extends Component {
         this.pwd = `${this.pwd}  /  ${key}`
 
     }
+    @action
+    goBack(){
+        this.pwd = this.pwd.split("/").slice(0, -1).join("/");
+        let parentDir = {}
+        this.pwd.split("/").forEach(dir=>{
+            dir= dir.trim();
+           parentDir = parentDir.subFolder?.[dir] ?? this[dir];
+        })
+        this.currentFolderList = parentDir
+    }
 }
