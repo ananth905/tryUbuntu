@@ -12,10 +12,38 @@ export default class Web extends Component {
     { id: 5, name: "Netflix", link: "https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" },
     { id: 6, name: "Twitter", link: "https://static.vecteezy.com/system/resources/previews/027/395/710/non_2x/twitter-brand-new-logo-3-d-with-new-x-shaped-graphic-of-the-world-s-most-popular-social-media-free-png.png" }
   ];
+
+ @tracked tabs =[
+    {
+      name:"New Tab",
+      link:"/icons/firefox.png",
+      id:0
+    }
+  ]
+
+  @tracked currentTab ;
+
+  newTab = {
+    name:"New Tab",
+    link:"/icons/firefox.png"
+  }
   
 
     constructor(){
       super(...arguments);
+      this.currentTab = this.tabs[0]
     }
 
+    @action
+    addTab(){
+       let newTab = {...this.newTab,id:this.tabs.length}
+       this.tabs.push(newTab)
+       this.tabs = this.tabs;
+       this.currentTab = newTab
+    }
+
+    @action
+    focusTab(tab){
+      this.currentTab = tab
+    }
 }

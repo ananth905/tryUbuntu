@@ -1,7 +1,15 @@
 <div class="ephiny-window mt-5 br-14 absolute left-[2%] top-[2%] flex flex-col firefox">
        <div class="tabs-bar flex items-center justify-between">
         <div class="firefox-tabs h-full">
-            <div class="firefox-tab"></div>
+          {{#each this.tabs as |tab index|}}
+            <div class={{concat "firefox-tab flex items-center" (if (eq tab.id this.currentTab.id)" current-tab")}} onclick={{action this.focusTab tab}}>
+                <img src={{tab.link}} alt="" class="tab-icon">
+                <span class="tab-name">{{tab.name}}</span>
+            </div>
+          {{/each}}
+          <div class="add-tab-btn">
+            <img src="https://img.icons8.com/ios/100/plus-math--v1.png" class="add-tab-icon" alt="" onclick={{action this.addTab}}>
+          </div> 
         </div>
             <WindowControl/>
     </div>
