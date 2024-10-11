@@ -1,0 +1,54 @@
+<div class="ephiny-window mt-5 br-14 absolute left-[2%] top-[2%] flex flex-col firefox">
+       <div class="tabs-bar flex items-center justify-between">
+        <div class="firefox-tabs h-full">
+            <div class="firefox-tab"></div>
+        </div>
+            <WindowControl/>
+    </div>
+  <div class="ephiny-topbar w-full flex items-center justify-between">
+    <div class="icon-in-left  flex">
+        <div class="back-icon browser-top-icons">
+            <img src="https://img.icons8.com/sf-regular/48/left.png" alt="">
+        </div>
+        <div class="forward-icon browser-top-icons">
+            <img src="https://img.icons8.com/sf-regular/48/right.png" alt="forward--v1" />
+        </div>
+        <div class="reload-icon browser-top-icons">
+            <img src="https://img.icons8.com/sf-regular-filled/48/recurring-appointment.png" alt="reboot" />
+        </div>
+    </div>
+    <div class="search-bar relative">
+        <div class="site-search-icon browser-top-icons absolute top ">
+            <img src="https://img.icons8.com/ios-glyphs/30/search--v1.png" alt="bookmark-ribbon--v1" />
+        </div>
+        <input type="text" class="w-full outline-none bg-transparent px-2 h-full url-input" placeholder="Search with Google or Enter Address">
+    </div>
+    <div class="icon-in-right flex">
+
+        <div class="bookmarks browser-top-icons">
+            <img src="https://img.icons8.com/ios-filled/100/user-male-circle.png" alt="bookmark-ribbon--v1" />
+        </div>
+        <div class="open-tabs browser-top-icons">
+            <img src="https://img.icons8.com/fluency-systems-regular/50/puzzle.png" alt="four-squares" />
+        </div>
+        <div class="menu-icon browser-top-icons">
+            <img src="https://img.icons8.com/ios/250/menu--v7.png" alt="menu--v7" />
+        </div>
+    </div>
+  </div>
+            {{!-- <WindowControl/> --}}
+   <div class="preview-area content-area flex-grow grid place-items-center">
+      <div class="preview-tabs flex flex-wrap ">
+        {{#each this.previewTabs as | tab index |}}
+          <div class={{concat "preview-tab-container firefox relative flex items-center flex-col" (if (lt tab.id 7) " large-bt ")}}>
+            <div class="preview-tab grid place-items-center">
+                <img src={{tab.link}} alt="" class="preview-image">
+            </div>
+            <div class="preview-tab-name mt-1">{{tab.name}}</div>
+          </div>
+        {{/each}}
+         
+      </div>
+   </div>
+</div>
+{{yield}}

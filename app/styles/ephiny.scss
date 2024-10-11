@@ -7,6 +7,7 @@
     height: 75vh;
     background-color: #fafafa;
     overflow: hidden;
+    z-index: 2;
     .ephiny-topbar{
         background: white;
         height: 45px;
@@ -73,6 +74,52 @@
             .preview-image{
                 width: 36%;
             }
+
+            &.firefox{
+                width: 100px;
+                height: 120px;
+                margin: 5px 20px;
+                .preview-image{
+                    width: 56%;
+                }
+            }
         }
+    }
+
+    &.firefox{
+        background: #f9f9fb;
+        .ephiny-topbar{
+            border-bottom: 1px solid #f0f0f4;
+            background: #f9f9fb;
+            .search-bar{
+                background: #f0f0f4;
+            }
+        }
+          .firefox-tabs{
+             display: flex;
+             align-items: center;
+             padding-left: 20px;
+          }
+        .firefox-tab{
+            width: 200px;
+            height: 32px;
+            background: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 0 5px 1px #c5c5c566;
+        }
+    }
+
+
+    .tabs-bar{
+        height: 42px;
+        background: #ebebef;
+        width: 100%;
+    }
+    .site-search-icon{
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .url-input{
+        padding-left: 35px;
     }
 }
