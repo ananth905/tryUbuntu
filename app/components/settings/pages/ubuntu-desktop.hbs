@@ -27,7 +27,7 @@
             </div>
             <div class="settings-strap ">
                 <div class="strap-name">Show Home Folder</div>
-                <XToggle @value={{this.myValue}} @onToggle={{fn (mut this.myValue)}} @theme='light' @size="small" />
+                <XToggle @value={{this.showHomeFolder}} @onToggle={{fn (mut this.showHomeFolder)}} @theme='light' @size="small" />
             </div>
         </div>
         <div class="settings-strap-heading mt-8 ">
@@ -39,16 +39,16 @@
                 <div class="main-start-content">Auto-hide the Dock</div>
                 <div class="main-start-description">The dock hides when any windows overlap with it</div>
             </div>
-            <XToggle @value={{this.myValue}} @onToggle={{fn (mut this.myValue)}} @theme='light' @size="small" />
+            <XToggle @value={{this.autoHideDock}} @onToggle={{fn (mut this.autoHideDock)}} @theme='light' @size="small" />
           
         </div>
         <div class="settings-strap ">
             <div class="strap-name">Poannel Mode</div>
-             <XToggle @value={{this.myValue}} @onToggle={{fn (mut this.myValue)}} @theme='light' @size="small" />
+             <XToggle @value={{this.poannelMode}} @onToggle={{fn (mut this.poannelMode)}} @theme='light' @size="small" />
         </div>
         <div class="settings-strap ">
             <div class="strap-name">Icon Size</div>
-            <XToggle @value={{this.myValue}} @onToggle={{fn (mut this.myValue)}} @theme='light' @size="small" />
+            <XToggle @value={{this.iconSize}} @onToggle={{fn (mut this.iconSize)}} @theme='light' @size="small" />
         </div>
          <div class="settings-strap">
                 <div class="strap-name">Position on Screen</div>
@@ -71,7 +71,7 @@
        </div>
        <div class="settings-strap-heading mt-8 ">
             <span>Enhanced Tiling</span>
-              <XToggle @value={{this.myValue}} @onToggle={{fn (mut this.myValue)}} @theme='light' @size="small" />
+              <XToggle @value={{this.enhancedTiling}} @onToggle={{fn (mut this.enhancedTiling)}} @theme='light' @size="small" />
         </div>
         <div class="settings-strap-container w-full">
                    <div class="settings-strap">
@@ -79,13 +79,13 @@
                 <div class="main-start-content">Tiling Popup</div>
                 <div class="main-start-description">Show a list of open apps to fill empty screen after tiling a window</div>
             </div>
-            <XToggle @value={{this.myValue}} @onToggle={{fn (mut this.myValue)}} @theme='light' @size="small" />
+            <XToggle @value={{this.tilingPopUp}} @onToggle={{fn (mut this.tilingPopUp)}} @theme='light' @size="small" />
           
         </div>
         <div class="settings-strap ">
             <div class="strap-name"><div class="main-start-content">Tile Groups</div>
                 <div class="main-start-description">Kepp Windows Grouped together when tiled, so that raisign one brings up the group</div></div>
-             <XToggle @value={{this.myValue}} @onToggle={{fn (mut this.myValue)}} @theme='light' @size="small" />
+             <XToggle @value={{this.tileGroups}} @onToggle={{fn (mut this.tileGroups)}} @theme='light' @size="small" />
         </div>
         </div>
                   
