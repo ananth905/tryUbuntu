@@ -3,7 +3,14 @@ import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
 
 export default class SettingsContainer extends Component {
-    myValue = 0
+    showHomeFolder = 0
+    poannelMode=0
+    autoHideDock=0
+    tilingPopUp=0
+    enhancedTiling=0
+    iconSize=0
+    poannelMode=0
+    tileGroups=0  
 
     allSize = ['Small', 'Normal', 'Large', 'Tiny'];
     selectedSize = "Normal";
