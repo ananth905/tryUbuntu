@@ -10,6 +10,7 @@ export default class DesktopserviceService extends Service {
     1: {
       link: '/icons/firefox.png',
       appName: 'Firefox',
+      component:'installed-apps/firefox/web'
     },
     2: {
       link: '/icons/thunder.png',
