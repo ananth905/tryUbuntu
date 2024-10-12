@@ -1,4 +1,4 @@
-<div class="ephiny-window mt-5 br-14 absolute left-[2%] top-[2%] flex flex-col firefox">
+<div class="ephiny-window mt-5 br-14 absolute left-[2%] top-[2%] flex flex-col " id="firefox">
        <div class="tabs-bar flex items-center justify-between">
         <div class="firefox-tabs h-full">
           {{#each this.tabs as |tab index|}}
@@ -29,7 +29,7 @@
         <div class="site-search-icon browser-top-icons absolute top ">
             <img src="https://img.icons8.com/ios-glyphs/30/search--v1.png" alt="bookmark-ribbon--v1" />
         </div>
-        <input type="text" class="w-full outline-none bg-transparent px-2 h-full url-input" placeholder="Search with Google or Enter Address">
+        <input type="text" class="w-full outline-none bg-transparent px-2 h-full url-input" placeholder="Search with DuckduckGo or enter Address">
     </div>
     <div class="icon-in-right flex">
 
@@ -45,7 +45,14 @@
     </div>
   </div>
             {{!-- <WindowControl/> --}}
-   <div class="preview-area content-area flex-grow grid place-items-center">
+   <div class="preview-area content-area flex-grow flex flex-col items-center justify-center place-items-center">
+      <div class="firefox-logo">
+        <img src="/icons/FirefoxTab.png" alt="">
+      </div>
+      <div class="google-search-bar">
+         <img src="https://img.icons8.com/color/48/duckduckgo--v1.png" class="h-full" alt="">
+        <input type="text" class="google-search-input" placeholder="Search with DuckDuckGo or enter">
+      </div>
       <div class="preview-tabs flex flex-wrap ">
         {{#each this.previewTabs as | tab index |}}
           <div class={{concat "preview-tab-container firefox relative flex items-center flex-col" (if (lt tab.id 7) " large-bt ")}}>

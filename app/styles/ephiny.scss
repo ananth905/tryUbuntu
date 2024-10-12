@@ -86,7 +86,7 @@
         }
     }
 
-    &.firefox{
+    &#firefox{
         background: #f9f9fb;
         .ephiny-topbar{
             border-bottom: 1px solid #f0f0f4;
@@ -98,7 +98,7 @@
           .firefox-tabs{
              display: flex;
              align-items: center;
-             padding-left: 50px;
+             padding-left: 7px;
              max-width: 85%;
           }
         .firefox-tab{
@@ -111,6 +111,12 @@
                 background: #ffffff;
                 box-shadow: 0 0 5px 1px #c5c5c566;
             }
+            &:not(.current-tab):hover{
+                background: #dcdcdc;
+            }
+        }
+        .preview-tab{
+            border: none;
         }
     }
 
@@ -156,5 +162,35 @@
     img{
         height: 20px;
         width: 20px;
+    }
+}
+.firefox-logo img{
+    height: 75px;
+}
+.google-search-bar{
+    height: 49px;
+    width: 714px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 4px 2px #6060601f;
+    position: relative;
+    overflow: hidden;
+    margin-top: 45px;
+    margin-bottom: 60px;
+    img{
+        height: 65%;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 2%;
+    }
+    .google-search-input{
+      height: 100%;
+      width: 100%;
+      padding-left: 8%;
+      
+      &::placeholder{
+        font-size: 14px;
+      }
     }
 }
