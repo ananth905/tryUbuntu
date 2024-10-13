@@ -1,0 +1,51 @@
+<div class="top-calendar-box absolute flex justify-between" {{on-click-outside (action @toggleCalendar)}}>
+  <div class="activities-section flex-grow ">
+   <div></div>
+   <div class="noticaion-container opacity-40 text-center">
+    <img width="140" height="140" src="https://img.icons8.com/sf-regular/240/appointment-reminders.png" class="mx-auto" alt="appointment-reminders"/>
+    <span>No Notification</span>
+   </div>
+   <div class="dnd flex items-center w-full">
+    <span class="mr-2">Do Not Disturb</span>
+     <XToggle @value={{this.dnd}} @onToggle={{fn (mut this.dnd)}} @theme='light' @size="small" />
+   </div>
+  </div>
+  <div class="calendar-section h-full">
+    <div class="display-selected-container">
+       <div class="selected-day-name">{{this.selectedDayName}}</div>
+       <div class="selected-date">{{this.selectedDateLocaleString}}</div>
+    </div>
+
+
+
+    <div id="calendar-container">
+      <PowerCalendar @center={{this.center}} @selected={{this.selected}} @onSelect={{this.onSelect}} @onCenterChange={{perform this.updateMonth}} as
+        |calendar|>
+        <div class={{if calendar.loading 'loading-spiner-overlay' }}>
+          <calendar.Nav />
+          <calendar.Days />
+        </div>
+      </PowerCalendar>
+    </div>
+
+     <div class="events-list bg-white">
+       <div class="day">Today</div>
+       <div class="event italic">No Event</div>
+     </div>
+
+     <div class="world-clock bg-white mt-3">
+      Add world clock...
+     </div>
+
+
+  </div>
+</div>
+{{yield}}
+
+{{!-- <div class="subcatlist h-0 overflow-hidden flex flex-col w-full"></div>
+{{#if item.subCat.length}}
+{{#each item.subCat as |subItem index|}}
+<div class="subcatItem h-[30px] mx-auto leading-[30px]">{{subItem}}</div>
+{{/each}}
+{{/if}}
+</div> --}}

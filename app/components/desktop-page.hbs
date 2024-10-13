@@ -17,8 +17,11 @@
     </div>
     <div class="topbar">
       <div class="currentactivity"></div>
-      <div class="timebox">
+      <div class="timebox" onclick={{action this.toggleCalendar}} >
         <div class="displaytime">{{this.taskBarTime}}</div>
+         {{#if this.isTopCalendarOpen}}
+          <Calendar @toggleCalendar={{action this.toggleCalendar}}/>
+         {{/if}} 
       </div>
       <div class={{concat "shortcut flex items-center " (if this.isTopSettingOpen " shortcut-opened")}} onclick={{action this.toggleProperty}}>
         <div class="ethernet-menu relative mr-3">

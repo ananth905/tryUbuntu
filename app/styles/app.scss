@@ -5,6 +5,7 @@
 @import "ember-power-select";
 @import 'appstore';
 @import 'files';
+@import "ember-power-calendar";
 body {
   padding: 0;
   margin: 0;
@@ -96,7 +97,6 @@ body {
   }
 
   .topbar {
-    color: white;
     position: absolute;
     z-index: 1;
     top: 0;
@@ -109,6 +109,8 @@ body {
 
     .displaytime {
       font-size: 12px;
+      color: white;
+      cursor: default;
     }
 
     .shortcut {
@@ -256,112 +258,6 @@ body {
 .top-setting-container {
   color: #232323;
 
-  // input[type=range] {
-  //   -webkit-appearance: none;
-  // }
-
-  // input[type=range]::-webkit-slider-runnable-track {
-  //   width: 80%;
-  //   height: 3px;
-  //   background: #92908f;
-  //   border: none;
-  //   border-radius: 3px;
-  // }
-
-  // input[type=range]::-webkit-slider-thumb {
-  //   -webkit-appearance: none;
-  //   border: none;
-  //   height: 12px;
-  //   width: 12px;
-  //   border-radius: 50%;
-  //   background: rgb(254, 254, 254);
-  //   margin-top: -4px;
-  //   border: 1px solid rgba(0, 0, 0, 0.605);
-  // }
-
-  // input[type=range]:focus {
-  //   outline: none;
-  // }
-
-  // //   input[type=range]:focus::-webkit-slider-runnable-track {
-  // //     background: #ccc;
-  // //  }
-  // input[type=range] {
-  //   /* fix for FF unable to apply focus style bug  */
-  //   // border: 1px solid white;
-  //   /*required for proper track sizing in FF*/
-  //   background: transparent;
-  //   width: 88%;
-  // }
-
-  // input[type=range]::-moz-range-track {
-  //   width: 88%;
-  //   height: 5px;
-  //   background: #ddd;
-  //   border: none;
-  //   border-radius: 3px;
-  // }
-
-  // input[type=range]::-moz-range-thumb {
-  //   border: none;
-  //   height: 16px;
-  //   width: 16px;
-  //   border-radius: 50%;
-  //   background: goldenrod;
-  // }
-
-  // /*hide the outline behind the border*/
-  // input[type=range]:-moz-focusring {
-  //   outline: 1px solid white;
-  //   outline-offset: -1px;
-  // }
-
-  // input[type=range]:focus::-moz-range-track {
-  //   background: #ccc;
-  // }
-
-  // /* for ie */
-
-  // input[type=range]::-ms-track {
-  //   width: 80%;
-  //   height: 5px;
-
-  //   /*remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
-  //   background: transparent;
-
-  //   /*leave room for the larger thumb to overflow with a transparent border */
-  //   border-color: transparent;
-  //   border-width: 6px 0;
-
-  //   /*remove default tick marks*/
-  //   color: transparent;
-  // }
-
-  // input[type=range]::-ms-fill-lower {
-  //   background: #777;
-  //   border-radius: 10px;
-  // }
-
-  // input[type=range]::-ms-fill-upper {
-  //   background: #ddd;
-  //   border-radius: 10px;
-  // }
-
-  // input[type=range]::-ms-thumb {
-  //   border: none;
-  //   height: 16px;
-  //   width: 16px;
-  //   border-radius: 50%;
-  //   background: goldenrod;
-  // }
-
-  // input[type=range]:focus::-ms-fill-lower {
-  //   background: #888;
-  // }
-
-  // input[type=range]:focus::-ms-fill-upper {
-  //   background: #ccc;
-  // }
   .range-slider {
     width: 322px;
     margin: auto;
@@ -595,5 +491,91 @@ body {
 
   .ember-power-select-trigger:focus {
     border: none !important;
+  }
+}
+
+//power calendar
+#calendar-container{
+  width: 254px;
+ 
+  button.ember-power-calendar-day{
+    background: transparent;
+    height: 35px;
+    width: 35px;
+    max-width: 35px;
+    font-weight: lighter;
+    font-size: 13px;
+  }
+  .ember-power-calendar-day--selected{
+    background: #e95420 !important;
+    color: white;
+    border-radius: 70px;
+  }
+  .ember-power-calendar-day--focused{
+    box-shadow: none;
+    border: none;
+  }
+  .ember-power-calendar-weekday{
+    color: #b1b1b2;
+    font-weight: lighter;
+    font-size: 13px;
+  }
+  .ember-power-calendar-nav-title,.ember-power-calendar-nav-control{
+    color: #6f6f6f;
+  }
+}
+
+.top-calendar-box{
+  width: 730px;
+  height: 500px;
+  left: 30.5%;
+  border-radius: 12px;
+  background: #f7f7f7;
+  padding: 10px;
+  top: 40px;
+  .calendar-section{
+    border-left: 1px solid #ababab95;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .events-list ,.world-clock{
+    font-weight: lighter;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    box-shadow: 0 0 1px 2px #e9e9e9;
+    .day{
+      opacity: 0.5;
+    }
+    .event{
+      opacity: 0.4;
+    }
+  }
+  .display-selected-container{
+    margin-bottom: 12px;
+    .selected-day-name{
+      font-weight: lighter;
+      font-size: 14px;
+      opacity: 0.6;
+    }
+    .selected-date{
+      font-size: 20px;
+      opacity: 0.4;
+    }
+  }
+
+  .activities-section{
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    .dnd{
+      font-weight: lighter;
+      opacity: 0.7;
+      font-size: 14px;
+    }
   }
 }
