@@ -63,7 +63,7 @@ export default class TopSettingContainerComponent extends Component {
   toggleProperty(event){
     if(event.target.closest('.settings-shortcut'))
       return;
-    this.args.toggleProperty();
+    this.args.toggleProperty(event);
   }
 
   @action
