@@ -27,7 +27,7 @@ export default class TopSettingContainerComponent extends Component {
   }
 
   @(task(function* ({ date }) {
-    yield timeout(600); // Pretend this is an ajax call to the server...
+    yield timeout(6); // Pretend this is an ajax call to the server...
     // ...and that here we update the events somehow
     this.center = date;
   }).drop())
