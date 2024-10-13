@@ -1,4 +1,4 @@
- <div class="top-setting-container absolute" {{on-click-outside this.args.toggleProperty}} {{did-insert this.styleInputSlider}}>
+ <div class="top-setting-container absolute" {{on-click-outside (action this.toggleProperty)}} {{did-insert this.styleInputSlider}}>
   <div class="rounded-tiles flex w-full justify-between">
     <div class="rounded-tile battery">
       <img width="14" height="14" class="top-line-icon" src="https://img.icons8.com/ios-filled/100/battery-.png" alt="battery-"/>
@@ -33,7 +33,7 @@
    </div>
    <div class="settings-shortcut justify-center flex flex-wrap">
    {{#each this.itemBeforeDivder as |item index |}}
-   <div class={{concat "flex flex-col settingoption items-center justify-center mt-1" (if item.open " turn-on-option")}} onclick={{action this.toggleSubcatList}}>
+   <div class={{concat "flex flex-col settingoption items-center justify-center mt-1" (if item.onState " turn-on-option")}} onclick={{action this.toggleSubcatList item}}>
      <div class="flex items-center setting-opt-name justify-between"  >
       <div class="flex items-center ">
          <img src={{item.src}} alt="" class="top-settings-icon mr-3"/>

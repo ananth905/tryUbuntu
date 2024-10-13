@@ -1,38 +1,43 @@
 import Component from '@glimmer/component';
 import { action, set } from '@ember/object';
+import { tracked } from '@glimmer/tracking';
 export default class TopSettingContainerComponent extends Component {
   init() {
     super.init(...arguments);
   }
 
-  itemBeforeDivder = [
+   @tracked itemBeforeDivder = [
     {
       src: '/icons/ether.png',
       name: 'Wi-Fi',
       description:"ACT Fibernet",
-      open:true
+      onState:true
     },
     {
       src: '/icons/battery.png',
       name: 'Bluetooth',
-      open:true
+      onState:true
     },
     {
       src: '/icons/speedomeeter.png',
       name: 'PowerMode',
       description: 'Balanced',
+      onState:false
     },
     {
       src: 'https://img.icons8.com/fluency-systems-filled/50/moon.png',
       name: 'Night Light',
+      onState:false,
     },
     {
       src: 'https://img.icons8.com/ios-filled/100/do-not-disturb-2.png',
       name: 'Dark Style',
+      onState:false
     },
     {
       src: 'https://img.icons8.com/ios-filled/100/airport.png',
       name: 'Airplane Mode',
+      onState:false
     },
   ];
 
@@ -42,12 +47,23 @@ export default class TopSettingContainerComponent extends Component {
   }
 
   @action
-  toggleSubcatList(event) {
-    // $(".subcatlist").addClass('h-0 overflow-hidden')
-    event.target
-      .closest('.settingoption')
-      .querySelector('.subcatItem')
-      .classList.remove('h-0', 'overflow-hidden');
+  toggleSubcatList(item,event) {
+    // $(".subcatlist").addClass('h-0 overflow-hidden');
+    let index = this.itemBeforeDivder.findIndex(ele=>ele.name == item.name);
+    set(this.itemBeforeDivder[index],"onState" ,!this.itemBeforeDivder[index].onState)
+    // this.itemBeforeDivder = this.itemBeforeDivder[index] // need to change
+    // event.target
+    //   .closest('.settingoption')
+    //   .querySelector('.subcatItem')
+    //   .classList.remove('h-0', 'overflow-hidden');
+
+  }
+
+  @action
+  toggleProperty(event){
+    if(event.target.closest('.settings-shortcut'))
+      return;
+    this.args.toggleProperty();
   }
 
   @action

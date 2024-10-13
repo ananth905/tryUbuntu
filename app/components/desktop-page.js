@@ -48,7 +48,8 @@ export default class DesktopPageComponent extends Component {
   }
   @action
   toggleProperty(event) {
-    if (event.target.closest('.top-setting-container')) return;
+    if (event.target.closest('.top-setting-container')) 
+      return;
     this.isTopSettingOpen = !this.isTopSettingOpen;
     console.log('isTopSettingOpen', this.isTopSettingOpen);
   }
