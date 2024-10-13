@@ -117,7 +117,7 @@ body {
       margin-right: 4px;
       padding: 3px 8px;
       border-radius: 12px;
-      &.shortcut-opened{
+      &.shortcut-opened,&:hover{
         background: #454545;
       }
       // img {
@@ -497,6 +497,7 @@ body {
 //power calendar
 #calendar-container{
   width: 254px;
+  min-height: 300px;
  
   button.ember-power-calendar-day{
     background: transparent;

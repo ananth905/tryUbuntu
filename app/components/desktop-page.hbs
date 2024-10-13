@@ -17,7 +17,7 @@
     </div>
     <div class="topbar">
       <div class="currentactivity"></div>
-      <div class="timebox" onclick={{action this.toggleCalendar}} >
+      <div class={{concat " timebox shortcut "  (if this.isTopCalendarOpen " shortcut-opened") }} onclick={{action this.toggleCalendar}} >
         <div class="displaytime">{{this.taskBarTime}}</div>
          {{#if this.isTopCalendarOpen}}
           <Calendar @toggleCalendar={{action this.toggleCalendar}}/>
