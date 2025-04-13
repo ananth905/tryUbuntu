@@ -1,1 +1,14 @@
+
+       <div class="context-menu" {{did-insert this.customDidInsert}} {{did-update this.setContextPosition @clickedEvent}}>
+        {{#each @options as |option|}}
+          {{#if (eq option.name "s")}} 
+            <div class="seperator-line"></div>
+          {{else}}
+            <div class="context-menu-option" onclick={{this.contextAction}}>{{option.name}}</div>
+          {{/if}}
+        {{/each}}
+       </div>
+
+
+
 {{yield}}

@@ -1,12 +1,17 @@
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
-
+import { inject as service } from '@ember/service';
 export default class SettingsContainer extends Component {
+
+  @service('common-service') common;
+
+
   @tracked currentScreen;
   @tracked currentFolderList;
-
+  @tracked openContextMenu = false;
   @tracked pwd;
+  @tracked clickedEvent = null;
 
   settingsOption = [
     {
@@ -124,6 +129,24 @@ export default class SettingsContainer extends Component {
     },
   };
 
+  contextMenuOptions = [
+    { name: 'open' },
+    { name: 's' },
+    { name: 'Cut' },
+    { name: 'Copy' },
+    { name: 'Move To' },
+    { name: 'Copy To' },
+    { name: 's' },
+    { name: 'Rename' },
+    { name: 'Compress' },
+    { name: 'Email' },
+    { name: 'Move To Trash' },
+    { name: 's' },
+    { name: 'Open in Terminal' },
+    { name: 's' },
+    { name: 'Properties' },
+  ];
+
   constructor() {
     super(...arguments);
     this.currentScreen = this.settingsOption[2];
@@ -150,5 +173,12 @@ export default class SettingsContainer extends Component {
       parentDir = parentDir.subFolder?.[dir] ?? this[dir];
     });
     this.currentFolderList = parentDir;
+  }
+
+  @action
+  showContextMenu(value, event) {
+    event.preventDefault();
+    this.common.showContextMenu = value;
+    this.clickedEvent = event;
   }
 }

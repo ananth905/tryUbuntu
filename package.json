@@ -90,6 +90,7 @@
   },
   "dependencies": {
     "dom-to-image": "^2.6.0",
-    "html-to-image": "^1.11.11"
+    "html-to-image": "^1.11.11",
+    "jquery": "^3.7.1"
   }
 }

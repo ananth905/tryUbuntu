@@ -1,7 +1,7 @@
 
     {{#if this.currentFolderList}}    
      {{#each-in this.currentFolderList as |name folder|}}
-      <div class={{concat "folder-container" (if (eq this.clickedFolder.id folder.id) " clicked-level")}} onclick={{action this.setCurrentFolder folder}} ondblclick={{action @changeDirectory folder name}}>
+      <div class={{concat "folder-container" (if (eq this.clickedFolder.id folder.id) " clicked-level")}} onclick={{action this.setCurrentFolder folder}} ondblclick={{action @changeDirectory folder name}} oncontextmenu={{fn @contextCallBack true}}>
          <div class="folder-icon">
             <img src={{folder.icon}} alt="">
          </div>

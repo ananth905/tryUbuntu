@@ -6,6 +6,6 @@ module.exports = function (defaults) {
   const app = new EmberApp(defaults, {
     // Add options here
   });
-
+  app.import('node_modules/jquery/dist/jquery.js');
   return app.toTree();
 };

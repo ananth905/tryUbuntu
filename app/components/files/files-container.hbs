@@ -14,7 +14,7 @@
             <div class="settings-lhs-options">
                 {{#each this.settingsOption as |setting index|}}
                 <div class={{concat "setting-option relative flex items-center " (if (eq index
-                    this.currentScreen.id) " selected-setting " )}} onclick={{fn this.setCurrentScreen index}}>
+                    this.currentScreen.id) " selected-setting " )}} onclick={{fn this.setCurrentScreen index}} >
                     <img class="setting-option-icon" src={{setting.icon}} />
                     <div class="settings-option-name">{{setting.name}}</div>
                     {{#if setting.bottomLine}}
@@ -46,9 +46,14 @@
             <div class="wifi-tab-container settings-tab-page  h-full w-full">
                 <div class={{concat "px-4 pt-11 flex flex-wrap items-center " ( unless
                     this.currentFolderList "h-full w-full" )}}>
-                    <Files::Pages::AllFolder @currentFolderList={{this.currentFolderList.subFolder}} @changeDirectory={{action this.changeDirectory}}/>
+                  
+                      <Files::Pages::AllFolder @currentFolderList={{this.currentFolderList.subFolder}} @changeDirectory={{action this.changeDirectory}} @contextCallBack={{this.showContextMenu}}/>
+                 
                 </div>
             </div>
+            {{#if this.common.showContextMenu}}
+                <ContextMenu @options={{this.contextMenuOptions}} @clickedEvent={{this.clickedEvent}}/>
+            {{/if}}    
         </div>
     </div>
 </div>

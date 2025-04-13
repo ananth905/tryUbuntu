@@ -580,3 +580,37 @@ body {
     }
   }
 }
+
+
+//Right Click Menu 
+.context-menu{
+  position: fixed;
+  top: 30px;
+  left: 200px;
+  min-width: 250px;
+  min-height: 150px;
+  background: rgb(255, 255, 255);
+  border-radius: 8px;
+  box-shadow: 0px 0px 7px 0px rgb(49 49 49 / 28%);
+  padding: 7px;
+  z-index: 100;
+  .context-menu-option{
+    font-size: 14px;
+    height: 35px;
+    padding-left: 10px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    font-weight: 100;
+    cursor: default;
+    &:hover{
+      background-color: rgba(19, 19, 19, 0.1);
+    }
+  }
+  .seperator-line{
+    height: 1px;
+    width: calc(100% - 7px);
+    background-color: rgba(19, 19, 19, 0.1);
+    margin: 5px;
+  }
+}
