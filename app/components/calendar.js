@@ -3,26 +3,26 @@ import { action, set } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 import { task, timeout } from 'ember-concurrency';
 export default class TopSettingContainerComponent extends Component {
-
   @tracked center;
   @tracked selected = new Date();
 
   @tracked selectedDateLocaleString;
   @tracked selectedDayName;
 
-  dnd = 0
-
+  dnd = 0;
 
   constructor() {
-    super(...arguments); 
+    super(...arguments);
     this.updateLocaleString();
   }
 
-  updateLocaleString(){
+  updateLocaleString() {
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
-    const formattedDate = this.selected.toLocaleDateString('en-US', options);  
+    const formattedDate = this.selected.toLocaleDateString('en-US', options);
     this.selectedDateLocaleString = formattedDate;
-    const dayName = this.selected.toLocaleDateString('en-US',  { weekday: 'long' });
+    const dayName = this.selected.toLocaleDateString('en-US', {
+      weekday: 'long',
+    });
     this.selectedDayName = dayName;
   }
 
@@ -31,12 +31,11 @@ export default class TopSettingContainerComponent extends Component {
     // ...and that here we update the events somehow
     this.center = date;
   }).drop())
-   updateMonth;
+  updateMonth;
 
-
-   @action
-   onSelect(selected) {
-     this.selected = selected.date;
-     this.updateLocaleString();
-   }
+  @action
+  onSelect(selected) {
+    this.selected = selected.date;
+    this.updateLocaleString();
+  }
 }

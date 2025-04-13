@@ -8,14 +8,12 @@ export default class DesktopPageComponent extends Component {
   @service
   desktopservice;
 
-  @tracked dekstopScreenShot
+  @tracked dekstopScreenShot;
 
   @tracked isTopSettingOpen = false;
-  @tracked isTopCalendarOpen = false
+  @tracked isTopCalendarOpen = false;
 
   taskBarTime = 'Apr 17 17:05';
-
-
 
   init() {
     super.init(...arguments);
@@ -28,40 +26,36 @@ export default class DesktopPageComponent extends Component {
     document.querySelector(
       '.wallpaper'
     ).style.backgroundImage = `url(${this.desktopservice.wallpaper})`;
-
   }
 
   @action
-  async openAppDrawer()
-  {
-      this.setCurrentApp('app-drawer' ,true ,1)
-      document.querySelector(".startbtn").classList.add("start-opened")
-      // Set the source of an image element to the data URL
+  async openAppDrawer() {
+    this.setCurrentApp('app-drawer', true, 1);
+    document.querySelector('.startbtn').classList.add('start-opened');
+    // Set the source of an image element to the data URL
   }
 
   @action
-  async setCurrentApp(appName, toggle , appId) {
-    if (this.desktopservice.currentApp?.appName == 'app-drawer' && toggle){
+  async setCurrentApp(appName, toggle, appId) {
+    if (this.desktopservice.currentApp?.appName == 'app-drawer' && toggle) {
       set(this.desktopservice, 'currentApp', {});
-      document.querySelector('.desktop-workspace').classList.remove('scale-workspace');
-      document.querySelector(".startbtn").classList.remove(".start-opened")
-    }
-    else {
-
-     set(this.desktopservice, 'currentApp', {appName , appId });
+      document
+        .querySelector('.desktop-workspace')
+        .classList.remove('scale-workspace');
+      document.querySelector('.startbtn').classList.remove('.start-opened');
+    } else {
+      set(this.desktopservice, 'currentApp', { appName, appId });
     }
   }
   @action
   toggleProperty(event) {
-    if (event.target.closest('.top-setting-container')) 
-      return;
+    if (event.target.closest('.top-setting-container')) return;
     this.isTopSettingOpen = !this.isTopSettingOpen;
   }
 
   @action
-  toggleCalendar(event){
-    if (event.target.closest('.top-calendar-box')) 
-      return;
+  toggleCalendar(event) {
+    if (event.target.closest('.top-calendar-box')) return;
     this.isTopCalendarOpen = !this.isTopCalendarOpen;
   }
 }

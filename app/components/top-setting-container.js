@@ -6,38 +6,38 @@ export default class TopSettingContainerComponent extends Component {
     super.init(...arguments);
   }
 
-   @tracked itemBeforeDivder = [
+  @tracked itemBeforeDivder = [
     {
       src: '/icons/ether.png',
       name: 'Wi-Fi',
-      description:"ACT Fibernet",
-      onState:true
+      description: 'ACT Fibernet',
+      onState: true,
     },
     {
       src: '/icons/battery.png',
       name: 'Bluetooth',
-      onState:true
+      onState: true,
     },
     {
       src: '/icons/speedomeeter.png',
       name: 'PowerMode',
       description: 'Balanced',
-      onState:false
+      onState: false,
     },
     {
       src: 'https://img.icons8.com/fluency-systems-filled/50/moon.png',
       name: 'Night Light',
-      onState:false,
+      onState: false,
     },
     {
       src: 'https://img.icons8.com/ios-filled/100/do-not-disturb-2.png',
       name: 'Dark Style',
-      onState:false
+      onState: false,
     },
     {
       src: 'https://img.icons8.com/ios-filled/100/airport.png',
       name: 'Airplane Mode',
-      onState:false
+      onState: false,
     },
   ];
 
@@ -47,36 +47,38 @@ export default class TopSettingContainerComponent extends Component {
   }
 
   @action
-  toggleSubcatList(item,event) {
+  toggleSubcatList(item, event) {
     // $(".subcatlist").addClass('h-0 overflow-hidden');
-    let index = this.itemBeforeDivder.findIndex(ele=>ele.name == item.name);
-    set(this.itemBeforeDivder[index],"onState" ,!this.itemBeforeDivder[index].onState)
+    let index = this.itemBeforeDivder.findIndex((ele) => ele.name == item.name);
+    set(
+      this.itemBeforeDivder[index],
+      'onState',
+      !this.itemBeforeDivder[index].onState
+    );
     // this.itemBeforeDivder = this.itemBeforeDivder[index] // need to change
     // event.target
     //   .closest('.settingoption')
     //   .querySelector('.subcatItem')
     //   .classList.remove('h-0', 'overflow-hidden');
-
   }
 
   @action
-  toggleProperty(event){
-    if(event.target.closest('.settings-shortcut'))
-      return;
+  toggleProperty(event) {
+    if (event.target.closest('.settings-shortcut')) return;
     this.args.toggleProperty(event);
   }
 
   @action
-  styleInputSlider(){
+  styleInputSlider() {
     rangeSlider(document.querySelector('#range-slider'), {
       value: [0, 50],
       thumbsDisabled: [true, false],
-      rangeSlideDisabled: true
-    })
+      rangeSlideDisabled: true,
+    });
     rangeSlider(document.querySelector('#brightness'), {
       value: [0, 50],
       thumbsDisabled: [true, false],
-      rangeSlideDisabled: true
-    })
+      rangeSlideDisabled: true,
+    });
   }
 }

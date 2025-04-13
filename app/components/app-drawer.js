@@ -1,8 +1,7 @@
 import Component from '@glimmer/component';
-import { action ,set } from '@ember/object';
+import { action, set } from '@ember/object';
 import { service } from '@ember/service';
 export default class AppDrawerComponent extends Component {
-
   @service
   desktopservice;
 
@@ -58,37 +57,42 @@ export default class AppDrawerComponent extends Component {
     18: {
       link: '/icons/gnomeweb.png',
       name: 'Web',
-      componentPath:"installed-apps/ephiny/web"
+      componentPath: 'installed-apps/ephiny/web',
     },
     19: {
       link: '/icons/system-settings.png',
       name: 'Settings',
-      componentPath:"settings/settings-container"
+      componentPath: 'settings/settings-container',
     },
   };
-   
+
   @action
-  openAppList(element){
+  openAppList(element) {
     // element.classList.add('open-app-list')
     setTimeout(() => {
       element.classList.add('open-app-list');
-      document.querySelector('.desktop-workspace').classList.add('scale-workspace')
-    }, 0)
-
+      document
+        .querySelector('.desktop-workspace')
+        .classList.add('scale-workspace');
+    }, 0);
   }
   @action
-  openApp(key){
-    document.querySelector('.desktop-workspace').classList.remove('scale-workspace')
-    if(!this.desktopservice.taskBarIcons[key]){
-      set(this.desktopservice.taskBarIcons,key , this.allList[key])
-      set(this.desktopservice,"currentOpenedAppId" , key);
+  openApp(key) {
+    document
+      .querySelector('.desktop-workspace')
+      .classList.remove('scale-workspace');
+    if (!this.desktopservice.taskBarIcons[key]) {
+      set(this.desktopservice.taskBarIcons, key, this.allList[key]);
+      set(this.desktopservice, 'currentOpenedAppId', key);
     }
-    set(this.desktopservice,"taskBarIcons",this.desktopservice.taskBarIcons)
-    set(this.desktopservice.currentApp,'appName', this.allList[key].componentPath);
+    set(this.desktopservice, 'taskBarIcons', this.desktopservice.taskBarIcons);
+    set(
+      this.desktopservice.currentApp,
+      'appName',
+      this.allList[key].componentPath
+    );
   }
-  
-  @action
-  insertDesktopImg(element){
 
-  }
+  @action
+  insertDesktopImg(element) {}
 }
