@@ -8,6 +8,9 @@ export default class DesktopPageComponent extends Component {
   @service
   desktopservice;
 
+  @service 
+  commonService;
+
   @tracked dekstopScreenShot;
 
   @tracked isTopSettingOpen = false;

@@ -1,6 +1,6 @@
 <div class="desktop-container flex" >
  
-    <div class="taksbar">
+    <div class="taskbar">
         <div>
           <div class="applist">
             {{#each-in this.desktopservice.taskBarIcons as |index icon | }}
@@ -11,7 +11,11 @@
 
           </div>
           <div class="startbtn" {{action this.openAppDrawer}}>
-             <i class="fa-brands fa-ubuntu text-2xl text-white"></i>
+            {{#if this.commonService.isMobile}}
+               <img src="/phoneicons/startlogo.png" alt="">
+             {{else}}
+               <i class="fa-brands fa-ubuntu text-2xl text-white"></i>
+             {{/if}}  
           </div>
         </div>
     </div>

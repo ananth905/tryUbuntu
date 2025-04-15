@@ -35,8 +35,8 @@ body {
     z-index: -2;
   }
 
-  .taksbar {
-    height: 100%;
+  .taskbar {
+    height: 100svh;
     width: 60px;
     background: rgb(20 16 18);
     padding-top: 25px;
@@ -612,5 +612,19 @@ body {
     width: calc(100% - 7px);
     background-color: rgba(19, 19, 19, 0.1);
     margin: 5px;
+  }
+}
+
+
+// mobile
+@media (max-width: 430px) {
+  .desktop-container{
+    .taskbar >div{
+      justify-content: flex-end;
+    }
+    .taskbar .taskbaricon{
+      margin-bottom: 2px;
+      padding: 2px 4px;
+    }
   }
 }
