@@ -41,6 +41,7 @@ export default class DesktopPageComponent extends Component {
   @action
   async setCurrentApp(appName, toggle, appId) {
     if (this.desktopservice.currentApp?.appName == 'app-drawer' && toggle) {
+      this.closeDrawer()
       set(this.desktopservice, 'currentApp', {});
       document
         .querySelector('.desktop-workspace')
@@ -60,5 +61,22 @@ export default class DesktopPageComponent extends Component {
   toggleCalendar(event) {
     if (event.target.closest('.top-calendar-box')) return;
     this.isTopCalendarOpen = !this.isTopCalendarOpen;
+  }
+
+
+
+
+  @action
+  closeDrawer(){
+    const box =  document.querySelector(".app-drawer")
+    let x = -350;
+    const interval = setInterval(() => {
+      if (x <= -350) {
+        clearInterval(interval);
+      } else {
+        x -= 10;
+        box.style.transform = `translateX(${x}px)`;
+      }
+    }, 5);
   }
 }

@@ -618,6 +618,9 @@ body {
 
 // mobile
 @media (max-width: 430px) {
+  .taskbar ,.desktop-container .topbar{
+    z-index: 2;
+  }
   .desktop-container{
     .taskbar >div{
       justify-content: flex-end;
@@ -634,6 +637,8 @@ body {
     display: none;
   }
   .app-drawer {
+    z-index: 1;
+    transform: translateX(-350px);
     .all-app-list {
         display: flex;
         flex-wrap: wrap;
@@ -668,5 +673,19 @@ body {
     }
   }
  }
-
+ .desktop-container .topbar {
+    .shortcut:hover {
+      background: transparent;
+    }
+    .displaytime {
+      display: none;
+     }
+   }
+  .top-settings-icon {
+    width: 18px;
+    height: 18px;
+  }
+  .battery-icon{
+    transform: rotate(90deg);
+  }
 }

@@ -1,9 +1,16 @@
 import Component from '@glimmer/component';
 import { action, set } from '@ember/object';
 import { service } from '@ember/service';
+import { tracked } from '@glimmer/tracking';
 export default class AppDrawerComponent extends Component {
   @service
   desktopservice;
+
+  @service 
+  commonService;
+
+  @tracked domElement
+  @tracked transformX;
 
   allList = {
     6: {
@@ -66,6 +73,11 @@ export default class AppDrawerComponent extends Component {
     },
   };
 
+  constructor(owner, args) {
+    super(owner, args);
+  }
+
+
   @action
   openAppList(element) {
     // element.classList.add('open-app-list')
@@ -95,4 +107,26 @@ export default class AppDrawerComponent extends Component {
 
   @action
   insertDesktopImg(element) {}
+
+
+  @action
+  toggleDrawer(element){
+    if(!this.commonService.isMobile) 
+      return
+    console.log("insert drawer")
+    const box = element;
+    this.domElement = box
+    let x = -350;
+
+    const interval = setInterval(() => {
+      if (x >= 0) {
+         clearInterval(interval);
+      } else {
+         x += 10;
+        box.style.transform = `translateX(${x}px)`;
+      }
+    }, 5);
+  }
+
+
 }
