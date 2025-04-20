@@ -627,4 +627,46 @@ body {
       padding: 2px 4px;
     }
   }
+  .desktops-pans {
+    display: none !important;
+  }
+  .wallpaper{
+    display: none;
+  }
+  .app-drawer {
+    .all-app-list {
+        display: flex;
+        flex-wrap: wrap;
+        width: calc(100% - 62px);
+        margin: unset;
+        margin-left: 68px;
+        height: unset;
+        justify-content: flex-start;
+        &.open-app-list {
+          margin-top: 2px;
+        }
+    
+  }
+  .searchbox{
+    margin-left: 62px;
+    border-radius: 5px;
+    width: calc(100% - 90px);
+    margin-top: 20px;
+  }
+  .app-container{
+    height: unset;
+    .app-icon-wrap{
+      width: 83px;
+    }
+    .app-icon{
+      width: 52px;
+      height: 52px;
+    }
+    .app-name{
+      max-width: 80px;
+      font-size: 13px;
+    }
+  }
+ }
+
 }
