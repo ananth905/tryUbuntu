@@ -48,6 +48,7 @@ export default class SettingsContainer extends Component {
       id: 7,
       name: 'Appearance',
       icon: 'https://img.icons8.com/ios/100/cosmetic-brush.png',
+      component: 'appearance',
     },
     {
       id: 8,
@@ -122,7 +123,7 @@ export default class SettingsContainer extends Component {
 
   constructor() {
     super(...arguments);
-    this.currentScreen = this.settingsOption[0];
+    this.currentScreen = this.settingsOption[7];
   }
 
   @action

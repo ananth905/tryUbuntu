@@ -25,7 +25,7 @@
         }
     }
     .settings-strap {
-        height: 52px;
+        min-height: 52px;
         background: white;
        
       
@@ -37,6 +37,9 @@
         font-weight: lighter;
         font-size: 14px;
         color: #525252;
+        &.no-padding{
+            padding: 0;
+        }
         .forward-icon {
             width: 20px;
         }
@@ -79,5 +82,20 @@
         width: 20px;
         height: 20px;
         margin: 0 16px;
+    }
+}
+.bg-photo-flex{
+    width: fit-content;
+    padding: 20px 40px;
+    margin: 0 auto;
+}
+.bg-photo-container{
+    width: 140px;
+    height: 110px;
+    border-radius: 5px;
+    overflow: hidden;
+    img{
+        width: 100%;
+        height: 100%;
     }
 }
