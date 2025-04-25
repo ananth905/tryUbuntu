@@ -43,7 +43,7 @@
     {{!-- <InstalledApps::Ephiny::Web/> --}}
     {{!-- <SoftwareStore::SoftwareStore/> --}}
     {{/if }} 
-    <div class="desktop-workspace">
+    <div class="desktop-workspace" oncontextmenu={{this.showContextMenu}}>
          <div class="wallpaper" >
 
          </div>
@@ -51,6 +51,10 @@
           {{component this.desktopservice.currentApp.appName }}
       {{/if}}   
       {{!-- <Files::FilesContainer/> --}}
+
+    {{#if this.commonService.showContextMenu}}
+       <ContextMenu @options={{this.contextMenuOptions}} @clickedEvent={{this.clickedEvent}}/>
+    {{/if}}
      </div>
   
 

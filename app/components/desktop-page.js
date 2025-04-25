@@ -15,8 +15,28 @@ export default class DesktopPageComponent extends Component {
 
   @tracked isTopSettingOpen = false;
   @tracked isTopCalendarOpen = false;
-
+  @tracked clickedEvent = null;
   taskBarTime = 'Apr 17 17:05';
+
+  contextMenuOptions = [
+    { name: 'New Folder' },
+    { name: 's' },
+    { name: 'Paste' },
+    { name: 's' },
+    { name: 'Select All' },
+    { name: 's' },
+    { name: 'Arrange Icons' },
+    { name: 'Arrange By' },
+    { name: 's' },
+    { name: 'Show Desktop in files' },
+    { name: 's' },
+    { name: 'Open in Terminal' },
+    { name: 's' },
+    { name: 'Change Background...' },
+    { name: 's' },
+    { name: 'Desktop Icons Settings' },
+    { name: 'Display Settings' }
+  ];
 
   init() {
     super.init(...arguments);
@@ -78,5 +98,12 @@ export default class DesktopPageComponent extends Component {
         box.style.transform = `translateX(${x}px)`;
       }
     }, 5);
+  }
+
+  @action
+  showContextMenu(event){
+    event.preventDefault()
+     this.clickedEvent = event;
+     this.commonService.showContextMenu = true;
   }
 }
